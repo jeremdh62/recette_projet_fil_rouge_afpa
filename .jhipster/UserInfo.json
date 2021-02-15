@@ -1,0 +1,74 @@
+{
+  "name": "UserInfo",
+  "fields": [
+    {
+      "fieldName": "newsletter",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "userName",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "userInfo",
+      "relationshipName": "user",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "note",
+      "otherEntityRelationshipName": "userinfo",
+      "relationshipName": "note"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "recipe",
+      "otherEntityRelationshipName": "userinfo",
+      "relationshipName": "recipe"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "comments",
+      "otherEntityRelationshipName": "userinfo",
+      "relationshipName": "comments"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "role",
+      "otherEntityRelationshipName": "userInfo",
+      "relationshipName": "role",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "reward",
+      "otherEntityRelationshipName": "userInfo",
+      "relationshipName": "reward",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210210060107",
+  "entityTableName": "user_info",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

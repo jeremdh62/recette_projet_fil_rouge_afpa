@@ -1,0 +1,30 @@
+{
+  "name": "Ustensil",
+  "fields": [
+    {
+      "fieldName": "ustensil",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "recipe",
+      "otherEntityRelationshipName": "ustensil",
+      "relationshipName": "recipe",
+      "otherEntityField": "id",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20210210060607",
+  "entityTableName": "ustensil",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

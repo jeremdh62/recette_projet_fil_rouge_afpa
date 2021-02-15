@@ -1,0 +1,81 @@
+
+entity Recipe {
+	name String,
+    description String,
+    picture ImageBlob,
+    video String,
+    difficulty Integer,
+    price Float,
+    unrollRecipe TextBlob,// Déroulé de la recette
+    nbPerson Integer,
+    time Duration,
+    season String,
+    origin String,
+    online Boolean,
+    cooking String, // mode de cuisson
+    favorite Boolean, // coup de coeur
+    createdAt LocalDate,
+    updatedAt LocalDate
+}
+
+entity Note {
+	note Integer
+}
+
+entity UserInfo {
+	newsletter Boolean,
+    createdAt LocalDate,
+    updatedAt LocalDate,
+    userName String
+}
+
+entity Comments {
+	comments TextBlob
+}
+
+entity Role {
+	role String
+}
+
+entity Reward {
+	reward String
+}
+
+entity Ingredient {
+	ingredient String
+}
+
+entity Ustensil {
+	Ustensil String
+}
+
+entity Category {
+	category String
+}
+
+entity Event {
+	event String
+}
+
+// defining multiple oneToOne relationships
+relationship OneToOne {
+	UserInfo{user} to User,
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Recipe to Note{recipe},
+    UserInfo to Note{userinfo},
+    UserInfo to Recipe{userinfo},
+    UserInfo to Comments{userinfo}
+    Recipe to Comments{recipe},
+    Role to UserInfo {role},
+    Reward to UserInfo {reward}
+}
+
+relationship ManyToMany {
+    Recipe{ingredient(ingredient)} to Ingredient{recipe},
+    Recipe{ustensil(ustensil)} to Ustensil{recipe},
+    Recipe{category(category)} to Category{recipe},
+    Recipe{event(event)} to Event{recipe}
+}

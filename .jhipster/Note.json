@@ -1,0 +1,36 @@
+{
+  "name": "Note",
+  "fields": [
+    {
+      "fieldName": "note",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "recipe",
+      "otherEntityRelationshipName": "note",
+      "relationshipName": "recipe",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "userInfo",
+      "otherEntityRelationshipName": "note",
+      "relationshipName": "userinfo",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210210060007",
+  "entityTableName": "note",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

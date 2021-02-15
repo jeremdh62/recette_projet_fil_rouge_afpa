@@ -1,0 +1,30 @@
+{
+  "name": "Ingredient",
+  "fields": [
+    {
+      "fieldName": "ingredient",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "recipe",
+      "otherEntityRelationshipName": "ingredient",
+      "relationshipName": "recipe",
+      "otherEntityField": "id",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20210210060507",
+  "entityTableName": "ingredient",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

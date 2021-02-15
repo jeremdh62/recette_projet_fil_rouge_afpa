@@ -1,0 +1,30 @@
+{
+  "name": "Category",
+  "fields": [
+    {
+      "fieldName": "category",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "recipe",
+      "otherEntityRelationshipName": "category",
+      "relationshipName": "recipe",
+      "otherEntityField": "id",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20210210060707",
+  "entityTableName": "category",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Reward",
+  "fields": [
+    {
+      "fieldName": "reward",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "userInfo",
+      "otherEntityRelationshipName": "reward",
+      "relationshipName": "userInfo"
+    }
+  ],
+  "changelogDate": "20210210060407",
+  "entityTableName": "reward",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

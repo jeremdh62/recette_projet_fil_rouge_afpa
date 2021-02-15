@@ -12,6 +12,46 @@ import activate, { ActivateState } from 'app/modules/account/activate/activate.r
 import password, { PasswordState } from 'app/modules/account/password/password.reducer';
 import settings, { SettingsState } from 'app/modules/account/settings/settings.reducer';
 import passwordReset, { PasswordResetState } from 'app/modules/account/password-reset/password-reset.reducer';
+// prettier-ignore
+import recipe, {
+  RecipeState
+} from 'app/entities/recipe/recipe.reducer';
+// prettier-ignore
+import note, {
+  NoteState
+} from 'app/entities/note/note.reducer';
+// prettier-ignore
+import userInfo, {
+  UserInfoState
+} from 'app/entities/user-info/user-info.reducer';
+// prettier-ignore
+import comments, {
+  CommentsState
+} from 'app/entities/comments/comments.reducer';
+// prettier-ignore
+import role, {
+  RoleState
+} from 'app/entities/role/role.reducer';
+// prettier-ignore
+import reward, {
+  RewardState
+} from 'app/entities/reward/reward.reducer';
+// prettier-ignore
+import ingredient, {
+  IngredientState
+} from 'app/entities/ingredient/ingredient.reducer';
+// prettier-ignore
+import ustensil, {
+  UstensilState
+} from 'app/entities/ustensil/ustensil.reducer';
+// prettier-ignore
+import category, {
+  CategoryState
+} from 'app/entities/category/category.reducer';
+// prettier-ignore
+import event, {
+  EventState
+} from 'app/entities/event/event.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
@@ -25,6 +65,16 @@ export interface IRootState {
   readonly passwordReset: PasswordResetState;
   readonly password: PasswordState;
   readonly settings: SettingsState;
+  readonly recipe: RecipeState;
+  readonly note: NoteState;
+  readonly userInfo: UserInfoState;
+  readonly comments: CommentsState;
+  readonly role: RoleState;
+  readonly reward: RewardState;
+  readonly ingredient: IngredientState;
+  readonly ustensil: UstensilState;
+  readonly category: CategoryState;
+  readonly event: EventState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -40,6 +90,16 @@ const rootReducer = combineReducers<IRootState>({
   passwordReset,
   password,
   settings,
+  recipe,
+  note,
+  userInfo,
+  comments,
+  role,
+  reward,
+  ingredient,
+  ustensil,
+  category,
+  event,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar,
 });

@@ -7,6 +7,16 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entités",
+        "recipe": "Recipe",
+        "note": "Note",
+        "userInfo": "User Info",
+        "comments": "Comments",
+        "role": "Role",
+        "reward": "Reward",
+        "ingredient": "Ingredient",
+        "ustensil": "Ustensil",
+        "category": "Category",
+        "event": "Event",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

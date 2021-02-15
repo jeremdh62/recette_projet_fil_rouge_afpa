@@ -1,0 +1,23 @@
+{
+  "afparecetteApp": {
+    "ustensil": {
+      "home": {
+        "title": "Ustensils",
+        "createLabel": "Create a new Ustensil",
+        "createOrEditLabel": "Create or edit a Ustensil",
+        "notFound": "No Ustensils found"
+      },
+      "created": "A new Ustensil is created with identifier {{ param }}",
+      "updated": "A Ustensil is updated with identifier {{ param }}",
+      "deleted": "A Ustensil is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Ustensil {{ id }}?"
+      },
+      "detail": {
+        "title": "Ustensil"
+      },
+      "ustensil": "Ustensil",
+      "recipe": "Recipe"
+    }
+  }
+}

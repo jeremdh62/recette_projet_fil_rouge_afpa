@@ -1,0 +1,135 @@
+{
+  "name": "Recipe",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "picture",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldName": "video",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "difficulty",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "unrollRecipe",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "nbPerson",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "time",
+      "fieldType": "Duration"
+    },
+    {
+      "fieldName": "season",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "origin",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "online",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "cooking",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "favorite",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "note",
+      "otherEntityRelationshipName": "recipe",
+      "relationshipName": "note"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "comments",
+      "otherEntityRelationshipName": "recipe",
+      "relationshipName": "comments"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "ingredient",
+      "otherEntityRelationshipName": "recipe",
+      "relationshipName": "ingredient",
+      "otherEntityField": "ingredient",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "ustensil",
+      "otherEntityRelationshipName": "recipe",
+      "relationshipName": "ustensil",
+      "otherEntityField": "ustensil",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "category",
+      "otherEntityRelationshipName": "recipe",
+      "relationshipName": "category",
+      "otherEntityField": "category",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "event",
+      "otherEntityRelationshipName": "recipe",
+      "relationshipName": "event",
+      "otherEntityField": "event",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "userInfo",
+      "otherEntityRelationshipName": "recipe",
+      "relationshipName": "userinfo",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210210055907",
+  "entityTableName": "recipe",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
