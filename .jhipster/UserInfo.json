@@ -60,7 +60,7 @@
       "otherEntityField": "id"
     }
   ],
-  "changelogDate": "20210208123621",
+  "changelogDate": "20210210060107",
   "entityTableName": "user_info",
   "dto": "no",
   "pagination": "no",

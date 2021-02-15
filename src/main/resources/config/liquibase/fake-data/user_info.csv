@@ -1,11 +1,11 @@
 id;newsletter;created_at;updated_at;user_name
-1;false;2021-02-08;2021-02-07;Frozen reboot
-2;false;2021-02-08;2021-02-07;Awesome
-3;true;2021-02-08;2021-02-07;Realigned
-4;false;2021-02-07;2021-02-07;Quality
-5;true;2021-02-08;2021-02-08;Sausages Port product
-6;false;2021-02-08;2021-02-07;Supervisor
-7;true;2021-02-08;2021-02-07;Money Market Account Flat
-8;true;2021-02-07;2021-02-08;Lead Personal Loan Account
-9;false;2021-02-07;2021-02-07;programming
-10;false;2021-02-07;2021-02-08;payment
+1;false;2021-02-09;2021-02-09;Frozen reboot
+2;false;2021-02-10;2021-02-09;Awesome
+3;true;2021-02-10;2021-02-09;Realigned
+4;false;2021-02-09;2021-02-09;Quality
+5;true;2021-02-09;2021-02-10;Sausages Port product
+6;false;2021-02-09;2021-02-09;Supervisor
+7;true;2021-02-10;2021-02-09;Money Market Account Flat
+8;true;2021-02-09;2021-02-09;Lead Personal Loan Account
+9;false;2021-02-09;2021-02-09;programming
+10;false;2021-02-09;2021-02-09;payment

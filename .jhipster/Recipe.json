@@ -121,7 +121,7 @@
       "otherEntityField": "id"
     }
   ],
-  "changelogDate": "20210208123421",
+  "changelogDate": "20210210055907",
   "entityTableName": "recipe",
   "dto": "no",
   "pagination": "no",

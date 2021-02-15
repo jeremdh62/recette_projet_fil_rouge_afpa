@@ -22,7 +22,7 @@
       "otherEntityField": "id"
     }
   ],
-  "changelogDate": "20210208123521",
+  "changelogDate": "20210210060007",
   "entityTableName": "note",
   "dto": "no",
   "pagination": "no",

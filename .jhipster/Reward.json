@@ -14,7 +14,7 @@
       "relationshipName": "userInfo"
     }
   ],
-  "changelogDate": "20210208123921",
+  "changelogDate": "20210210060407",
   "entityTableName": "reward",
   "dto": "no",
   "pagination": "no",
