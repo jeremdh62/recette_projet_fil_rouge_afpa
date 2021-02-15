@@ -1,0 +1,44 @@
+{
+  "afparecetteApp": {
+    "recipe": {
+      "home": {
+        "title": "Recipes",
+        "createLabel": "Créer un nouveau Recipe",
+        "createOrEditLabel": "Créer ou éditer un Recipe",
+        "notFound": "Aucun Recipe trouvé"
+      },
+      "created": "Un nouveau Recipe a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Recipe avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Recipe avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Recipe {{ id }} ?"
+      },
+      "detail": {
+        "title": "Recipe"
+      },
+      "name": "Name",
+      "description": "Description",
+      "picture": "Picture",
+      "video": "Video",
+      "difficulty": "Difficulty",
+      "price": "Price",
+      "unrollRecipe": "Unroll Recipe",
+      "nbPerson": "Nb Person",
+      "time": "Time",
+      "season": "Season",
+      "origin": "Origin",
+      "online": "Online",
+      "cooking": "Cooking",
+      "favorite": "Favorite",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "note": "Note",
+      "comments": "Comments",
+      "ingredient": "Ingredient",
+      "ustensil": "Ustensil",
+      "category": "Category",
+      "event": "Event",
+      "userinfo": "Userinfo"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "afparecetteApp": {
+    "ustensil": {
+      "home": {
+        "title": "Ustensils",
+        "createLabel": "Créer un nouveau Ustensil",
+        "createOrEditLabel": "Créer ou éditer un Ustensil",
+        "notFound": "Aucun Ustensil trouvé"
+      },
+      "created": "Un nouveau Ustensil a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Ustensil avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Ustensil avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Ustensil {{ id }} ?"
+      },
+      "detail": {
+        "title": "Ustensil"
+      },
+      "ustensil": "Ustensil",
+      "recipe": "Recipe"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Role",
+  "fields": [
+    {
+      "fieldName": "role",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "userInfo",
+      "otherEntityRelationshipName": "role",
+      "relationshipName": "userInfo"
+    }
+  ],
+  "changelogDate": "20210208123821",
+  "entityTableName": "role",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Recipe.
+    -->
+    <changeSet id="20210208123421-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="recipe_id"
+                                 baseTableName="recipe_ingredient"
+                                 constraintName="fk_recipe_ingredient_recipe_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="recipe"/>
+
+        <addForeignKeyConstraint baseColumnNames="ingredient_id"
+                                 baseTableName="recipe_ingredient"
+                                 constraintName="fk_recipe_ingredient_ingredient_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ingredient"/>
+        
+        <addForeignKeyConstraint baseColumnNames="recipe_id"
+                                 baseTableName="recipe_ustensil"
+                                 constraintName="fk_recipe_ustensil_recipe_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="recipe"/>
+
+        <addForeignKeyConstraint baseColumnNames="ustensil_id"
+                                 baseTableName="recipe_ustensil"
+                                 constraintName="fk_recipe_ustensil_ustensil_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ustensil"/>
+        
+        <addForeignKeyConstraint baseColumnNames="recipe_id"
+                                 baseTableName="recipe_category"
+                                 constraintName="fk_recipe_category_recipe_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="recipe"/>
+
+        <addForeignKeyConstraint baseColumnNames="category_id"
+                                 baseTableName="recipe_category"
+                                 constraintName="fk_recipe_category_category_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="category"/>
+        
+        <addForeignKeyConstraint baseColumnNames="recipe_id"
+                                 baseTableName="recipe_event"
+                                 constraintName="fk_recipe_event_recipe_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="recipe"/>
+
+        <addForeignKeyConstraint baseColumnNames="event_id"
+                                 baseTableName="recipe_event"
+                                 constraintName="fk_recipe_event_event_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="event"/>
+        
+        <addForeignKeyConstraint baseColumnNames="userinfo_id"
+                                 baseTableName="recipe"
+                                 constraintName="fk_recipe_userinfo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user_info"/>
+
+    </changeSet>
+</databaseChangeLog>
