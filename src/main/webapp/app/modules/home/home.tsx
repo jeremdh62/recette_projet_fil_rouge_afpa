@@ -19,12 +19,12 @@ const { recipeList } = props;
     <div className="d-flex flex-wrap justify-content-center">
 	{recipeList.map((recipe, i) => (
       <Card key={`entity-${i}`} className="m-2 col-2">
-        <CardImg src={`data:${recipe.pictureContentType};base64,${recipe.picture}`} style={{ maxHeight: '30px' }} />
+        <CardImg src={`data:${recipe.pictureContentType};base64,${recipe.picture}`} style={{ maxHeight: '"30"px' }} />
         <CardBody>
           <CardTitle tag="h5">{recipe.name}</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">{recipe.origin}</CardSubtitle>
           <CardText>{recipe.description}</CardText>
-          <Button>Button</Button>
+          
         </CardBody>
       </Card>
 	))}
