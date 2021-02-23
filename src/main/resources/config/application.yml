@@ -145,7 +145,7 @@ jhipster:
   #     allow-credentials: true
   #     max-age: 1800
   mail:
-    from: afparecette@localhost
+    from: arras.afpa6262@gmail.com
   swagger:
     default-include-pattern: /api/.*
     title: afparecette API
