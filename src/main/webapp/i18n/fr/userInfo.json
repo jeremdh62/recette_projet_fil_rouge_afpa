@@ -2,30 +2,30 @@
   "afparecetteApp": {
     "userInfo": {
       "home": {
-        "title": "UserInfos",
-        "createLabel": "Créer un nouveau User Info",
-        "createOrEditLabel": "Créer ou éditer un User Info",
-        "notFound": "Aucun User Info trouvé"
+        "title": "Utilisateur",
+        "createLabel": "Créer un nouveau Utilisateur",
+        "createOrEditLabel": "Créer ou éditer un Utilisateur",
+        "notFound": "Aucun Utilisateur trouvé"
       },
-      "created": "Un nouveau User Info a été créé avec l'identifiant {{ param }}",
-      "updated": "Le User Info avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le User Info avec l'identifiant {{ param }} a été supprimé",
+      "created": "Un nouveau Utilisateur a été créé avec l'identifiant {{ param }}",
+      "updated": "L'Utilisateur avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "L'Utilisateur avec l'identifiant {{ param }} a été supprimé",
       "delete": {
-        "question": "Etes-vous certain de vouloir supprimer le User Info {{ id }} ?"
+        "question": "Etes-vous certain de vouloir supprimer l'Utilisateur {{ id }} ?"
       },
       "detail": {
-        "title": "User Info"
+        "title": "Utilisateur"
       },
       "newsletter": "Newsletter",
       "createdAt": "Created At",
       "updatedAt": "Updated At",
-      "userName": "User Name",
-      "user": "User",
+      "userName": "Utilisateur",
+      "user": "Utilisateur",
       "note": "Note",
-      "recipe": "Recipe",
-      "comments": "Comments",
+      "recipe": "Recette",
+      "comments": "Commentaire",
       "role": "Role",
-      "reward": "Reward"
+      "reward": "Récompense"
     }
   }
 }

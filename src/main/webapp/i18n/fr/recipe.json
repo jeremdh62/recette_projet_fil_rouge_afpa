@@ -2,43 +2,43 @@
   "afparecetteApp": {
     "recipe": {
       "home": {
-        "title": "Recipes",
-        "createLabel": "Créer un nouveau Recipe",
-        "createOrEditLabel": "Créer ou éditer un Recipe",
-        "notFound": "Aucun Recipe trouvé"
+        "title": "Recettes",
+        "createLabel": "Créer une nouvelle Recette",
+        "createOrEditLabel": "Créer ou éditer une Recette",
+        "notFound": "Aucune Recette trouvé"
       },
-      "created": "Un nouveau Recipe a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Recipe avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Recipe avec l'identifiant {{ param }} a été supprimé",
+      "created": "Une nouvelle Recette a été créé avec l'identifiant {{ param }}",
+      "updated": "La Recette avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "La Recette avec l'identifiant {{ param }} a été supprimé",
       "delete": {
-        "question": "Etes-vous certain de vouloir supprimer le Recipe {{ id }} ?"
+        "question": "Etes-vous certain de vouloir supprimer la Recette {{ id }} ?"
       },
       "detail": {
-        "title": "Recipe"
+        "title": "Recette"
       },
-      "name": "Name",
+      "name": "Nom",
       "description": "Description",
-      "picture": "Picture",
-      "video": "Video",
-      "difficulty": "Difficulty",
-      "price": "Price",
-      "unrollRecipe": "Unroll Recipe",
-      "nbPerson": "Nb Person",
-      "time": "Time",
-      "season": "Season",
-      "origin": "Origin",
-      "online": "Online",
-      "cooking": "Cooking",
-      "favorite": "Favorite",
+      "picture": "Photo",
+      "video": "Vidéo",
+      "difficulty": "Degrés de difficulté",
+      "price": "Prix",
+      "unrollRecipe": "Déroulé de la recette",
+      "nbPerson": "Nombre de Personne",
+      "time": "Temps",
+      "season": "Saisons",
+      "origin": "Origine",
+      "online": "En ligne",
+      "cooking": "Mode de cuisson",
+      "favorite": "Coup de coeur",
       "createdAt": "Created At",
       "updatedAt": "Updated At",
       "note": "Note",
-      "comments": "Comments",
-      "ingredient": "Ingredient",
-      "ustensil": "Ustensil",
-      "category": "Category",
-      "event": "Event",
-      "userinfo": "Userinfo"
+      "comments": "Commentaires",
+      "ingredient": "Ingrédient",
+      "ustensil": "Ustensile",
+      "category": "Catégorie",
+      "event": "Evénement",
+      "userinfo": "Utilisateur"
     }
   }
 }
