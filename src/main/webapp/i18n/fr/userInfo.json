@@ -2,7 +2,7 @@
   "afparecetteApp": {
     "userInfo": {
       "home": {
-        "title": "Utilisateur",
+        "title": "Utilisateurs",
         "createLabel": "Créer un nouveau Utilisateur",
         "createOrEditLabel": "Créer ou éditer un Utilisateur",
         "notFound": "Aucun Utilisateur trouvé"
@@ -19,7 +19,7 @@
       "newsletter": "Newsletter",
       "createdAt": "Created At",
       "updatedAt": "Updated At",
-      "userName": "Utilisateur",
+      "userName": "Nom d'utilisateur",
       "user": "Utilisateur",
       "note": "Note",
       "recipe": "Recette",
