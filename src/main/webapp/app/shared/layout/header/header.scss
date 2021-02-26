@@ -111,3 +111,25 @@ Navbar styles
   top: 0px;
   z-index: 1031;
 }
+.navbar {
+  background-color: #e55039;
+  color: #fff;
+}
+.form-inline {
+  margin: 0 auto;
+  margin-left: 40px;
+}
+.form {
+  width: 700px;
+  height: 45px;
+  border: none;
+}
+.navbar-collapse {
+  background-color: #e55039;
+}
+.head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e55039;
+}

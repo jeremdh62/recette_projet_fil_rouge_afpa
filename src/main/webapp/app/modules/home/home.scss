@@ -8,3 +8,15 @@ Main page styles
   background: url('../../../content/images/jhipster_family_member_2.svg') no-repeat center top;
   background-size: contain;
 }
+.cart {
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin-top: 50px;
+}
+
+.img {
+  transition: transform 2000ms ease-in-out;
+}
+.img:hover {
+  transform: scale(1.03);
+}
