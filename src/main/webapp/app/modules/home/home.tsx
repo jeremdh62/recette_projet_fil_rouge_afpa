@@ -20,7 +20,7 @@ export const Recipe = (props: IRecipeProps) => {
   }, []);
 const { recipeList } = props;
   return (
-    // <div className="d-flex">
+    <div className="d-flex">
     <div className="d-flex flex-wrap mt-5 justify-content-center">
 	{recipeList.map((recipe, i) => (
       <Card key={`entity-${i}`} className="m-2 col-3 mt-5 cart">
@@ -39,11 +39,11 @@ const { recipeList } = props;
       </Card>
 	))}
     </div>
-    // <div>
-    //   <div className="aside"></div>
-    //   <div className="aside2"></div>
-    //   </div>
-    //   </div>    
+     <div>
+       <div className="aside"></div>
+       <div className="aside2"></div>
+       </div>
+       </div>    
 
     
   );
