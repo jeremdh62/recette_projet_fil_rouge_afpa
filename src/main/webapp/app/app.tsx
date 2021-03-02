@@ -12,14 +12,12 @@ import { IRootState } from 'app/shared/reducers';
 import { getSession } from 'app/shared/reducers/authentication';
 import { getProfile } from 'app/shared/reducers/application-profile';
 import { setLocale } from 'app/shared/reducers/locale';
-// import Header from 'app/shared/layout/header/header';
- import HeaderUser from 'app/shared/layout/header/headerUser';
+import Header from 'app/shared/layout/header/header';
 import Footer from 'app/shared/layout/footer/footer';
 import { hasAnyAuthority } from 'app/shared/auth/private-route';
 import ErrorBoundary from 'app/shared/error/error-boundary';
 import { AUTHORITIES } from 'app/config/constants';
 import AppRoutes from 'app/routes';
-import BarreMenu from './shared/layout/header/barreMenu';
 
 const baseHref = document.querySelector('base').getAttribute('href').replace(/\/$/, '');
 
@@ -31,21 +29,21 @@ export const App = (props: IAppProps) => {
     props.getProfile();
   }, []);
 
+  const paddingTop = '60px';
   return (
     <Router basename={baseHref}>
-      <div className="app-container" >
+      <div className="app-container" style={{ paddingTop }}>
         <ToastContainer position={toast.POSITION.TOP_LEFT} className="toastify-container" toastClassName="toastify-toast" />
         <ErrorBoundary>
-          <HeaderUser
-            // isAuthenticated={props.isAuthenticated}
-            // isAdmin={props.isAdmin}
-            // currentLocale={props.currentLocale}
-            // onLocaleChange={props.setLocale}
-            // ribbonEnv={props.ribbonEnv}
-            // isInProduction={props.isInProduction}
-            // isSwaggerEnabled={props.isSwaggerEnabled}
+          <Header
+            isAuthenticated={props.isAuthenticated}
+            isAdmin={props.isAdmin}
+            currentLocale={props.currentLocale}
+            onLocaleChange={props.setLocale}
+            ribbonEnv={props.ribbonEnv}
+            isInProduction={props.isInProduction}
+            isSwaggerEnabled={props.isSwaggerEnabled}
           />
-          <BarreMenu />
         </ErrorBoundary>
         <div className="container-fluid view-container" id="app-view-container">
           <Card className="jh-card">

@@ -16,7 +16,11 @@ Main page styles
 
 .img {
   transition: transform 2000ms ease-in-out;
+  height: 70%;
 }
 .img:hover {
   transform: scale(1.03);
+}
+.card {
+  border: none;
 }
