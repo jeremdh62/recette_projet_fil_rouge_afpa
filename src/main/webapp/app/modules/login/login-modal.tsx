@@ -1,3 +1,4 @@
+import './login.scss'
 import React from 'react';
 import { Translate, translate } from 'react-jhipster';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Label, Alert, Row, Col } from 'reactstrap';
@@ -23,7 +24,7 @@ class LoginModal extends React.Component<ILoginModalProps> {
     return (
       <Modal isOpen={this.props.showModal} toggle={handleClose} backdrop="static" id="login-page" autoFocus={false}>
         <AvForm onSubmit={this.handleSubmit}>
-          <ModalHeader id="login-title" toggle={handleClose}>
+          <ModalHeader id="login-title" className="auth-title" toggle={handleClose}>
             <Translate contentKey="login.title">Sign in</Translate>
           </ModalHeader>
           <ModalBody>
@@ -62,25 +63,27 @@ class LoginModal extends React.Component<ILoginModalProps> {
               </Col>
             </Row>
             <div className="mt-1">&nbsp;</div>
-            <Alert color="warning">
-              <Link to="/account/reset/request">
+            <Alert color="warning" className="alert">
+              <Link to="/account/reset/request" className="auth-forget-password">
                 <Translate contentKey="login.password.forgot">Did you forget your password?</Translate>
               </Link>
             </Alert>
             <Alert color="warning">
-              <span>
-                <Translate contentKey="global.messages.info.register.noaccount">You don&apos;t have an account yet?</Translate>
-              </span>{' '}
-              <Link to="/account/register">
-                <Translate contentKey="global.messages.info.register.link">Register a new account</Translate>
-              </Link>
+              <span className="auth-advice">
+                <span>
+                  <Translate contentKey="global.messages.info.register.noaccount">You don&apos;t have an account yet?</Translate>
+                </span>{' '}
+                <Link to="/account/register" className="auth-register-new">
+                  <Translate contentKey="global.messages.info.register.link">Register a new account</Translate>
+                </Link>
+              </span>
             </Alert>
           </ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={handleClose} tabIndex="1">
               <Translate contentKey="entity.action.cancel">Cancel</Translate>
             </Button>{' '}
-            <Button color="primary" type="submit">
+            <Button className="auth-btn-new-account" type="submit">
               <Translate contentKey="login.form.button">Sign in</Translate>
             </Button>
           </ModalFooter>
