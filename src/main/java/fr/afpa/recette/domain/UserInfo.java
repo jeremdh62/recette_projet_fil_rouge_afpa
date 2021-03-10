@@ -7,7 +7,6 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -29,15 +28,6 @@ public class UserInfo implements Serializable {
     @Column(name = "newsletter")
     private Boolean newsletter;
 
-    @Column(name = "created_at")
-    private LocalDate createdAt;
-
-    @Column(name = "updated_at")
-    private LocalDate updatedAt;
-
-    @Column(name = "user_name")
-    private String userName;
-
     @OneToOne
     @JoinColumn(unique = true)
     private User user;
@@ -53,10 +43,6 @@ public class UserInfo implements Serializable {
     @OneToMany(mappedBy = "userinfo")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<Comments> comments = new HashSet<>();
-
-    @ManyToOne
-    @JsonIgnoreProperties(value = "userInfos", allowSetters = true)
-    private Role role;
 
     @ManyToOne
     @JsonIgnoreProperties(value = "userInfos", allowSetters = true)
@@ -82,45 +68,6 @@ public class UserInfo implements Serializable {
 
     public void setNewsletter(Boolean newsletter) {
         this.newsletter = newsletter;
-    }
-
-    public LocalDate getCreatedAt() {
-        return createdAt;
-    }
-
-    public UserInfo createdAt(LocalDate createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    public void setCreatedAt(LocalDate createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDate getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public UserInfo updatedAt(LocalDate updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    public void setUpdatedAt(LocalDate updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public UserInfo userName(String userName) {
-        this.userName = userName;
-        return this;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     public User getUser() {
@@ -211,19 +158,6 @@ public class UserInfo implements Serializable {
         this.comments = comments;
     }
 
-    public Role getRole() {
-        return role;
-    }
-
-    public UserInfo role(Role role) {
-        this.role = role;
-        return this;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
     public Reward getReward() {
         return reward;
     }
@@ -260,9 +194,6 @@ public class UserInfo implements Serializable {
         return "UserInfo{" +
             "id=" + getId() +
             ", newsletter='" + isNewsletter() + "'" +
-            ", createdAt='" + getCreatedAt() + "'" +
-            ", updatedAt='" + getUpdatedAt() + "'" +
-            ", userName='" + getUserName() + "'" +
             "}";
     }
 }

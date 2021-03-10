@@ -24,14 +24,7 @@ export const RoleDetail = (props: IRoleDetailProps) => {
         <h2>
           <Translate contentKey="afparecetteApp.role.detail.title">Role</Translate> [<b>{roleEntity.id}</b>]
         </h2>
-        <dl className="jh-entity-details">
-          <dt>
-            <span id="role">
-              <Translate contentKey="afparecetteApp.role.role">Role</Translate>
-            </span>
-          </dt>
-          <dd>{roleEntity.role}</dd>
-        </dl>
+        <dl className="jh-entity-details"></dl>
         <Button tag={Link} to="/role" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}
           <span className="d-none d-md-inline">

@@ -1,19 +1,7 @@
 {
   "name": "Role",
-  "fields": [
-    {
-      "fieldName": "role",
-      "fieldType": "String"
-    }
-  ],
-  "relationships": [
-    {
-      "relationshipType": "one-to-many",
-      "otherEntityName": "userInfo",
-      "otherEntityRelationshipName": "role",
-      "relationshipName": "userInfo"
-    }
-  ],
+  "fields": [],
+  "relationships": [],
   "changelogDate": "20210210060307",
   "entityTableName": "role",
   "dto": "no",
@@ -24,5 +12,7 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": "*"
+  "applications": "*",
+  "searchEngine": false,
+  "databaseType": "sql"
 }
