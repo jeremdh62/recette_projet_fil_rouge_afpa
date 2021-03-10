@@ -10,6 +10,7 @@ import LoadingBar from 'react-redux-loading-bar';
 
 import { Home, Brand } from './header-components';
 import { AdminMenu, EntitiesMenu, AccountMenu, LocaleMenu } from '../menus';
+import BarreMenu from './barreMenu';
 
 export interface IHeaderProps {
   isAuthenticated: boolean;
@@ -45,7 +46,7 @@ const Header = (props: IHeaderProps) => {
 
   return (
     <div id="app-header">
-      {renderDevRibbon()}
+      {/* {renderDevRibbon()} */}
       <LoadingBar className="loading-bar" />
       <Navbar dark expand="sm" fixed="top" className="jh-navbar">
         <NavbarToggler aria-label="Menu" onClick={toggleMenu} />
@@ -62,6 +63,8 @@ const Header = (props: IHeaderProps) => {
           </Nav>
         </Collapse>
       </Navbar>
+      <BarreMenu/>
+
     </div>
   );
 };
