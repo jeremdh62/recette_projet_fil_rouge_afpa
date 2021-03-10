@@ -2,7 +2,9 @@
 // Import Bootstrap source files from node_modules
 @import 'node_modules/bootstrap/scss/bootstrap';
 body {
+  //background: #fafafa;
   background: #fff;
+
   margin: 0;
 }
 
@@ -94,7 +96,7 @@ Generic styles
 /* other generic styles */
 
 .title {
-  font-size: 1.25em;
+  font-size: 2.5em;
   margin: 1px 10px 1px 10px;
 }
 
