@@ -102,14 +102,7 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
             <p>Loading...</p>
           ) : (
             <AvForm model={isNew ? {} : recipeEntity} onSubmit={saveEntity}>
-              {!isNew ? (
-                <AvGroup>
-                  <Label for="recipe-id">
-                    <Translate contentKey="global.field.id">ID</Translate>
-                  </Label>
-                  <AvInput id="recipe-id" type="text" className="form-control" name="id" required readOnly />
-                </AvGroup>
-              ) : null}
+              
               <AvGroup>
                 <Label id="nameLabel" for="recipe-name">
                   <Translate contentKey="afparecetteApp.recipe.name">Name</Translate>
@@ -188,7 +181,7 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
                 <Label id="timeLabel" for="recipe-time">
                   <Translate contentKey="afparecetteApp.recipe.time">Time</Translate>
                 </Label>
-                <AvField id="recipe-time" type="text" name="time" />
+                <AvField id="recipe-time" type="time" name="time" />
               </AvGroup>
               <AvGroup>
                 <Label id="seasonLabel" for="recipe-season">
@@ -214,24 +207,14 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
                 </Label>
                 <AvField id="recipe-cooking" type="text" name="cooking" />
               </AvGroup>
+              
               <AvGroup check>
                 <Label id="favoriteLabel">
                   <AvInput id="recipe-favorite" type="checkbox" className="form-check-input" name="favorite" />
                   <Translate contentKey="afparecetteApp.recipe.favorite">Favorite</Translate>
                 </Label>
               </AvGroup>
-              <AvGroup>
-                <Label id="createdAtLabel" for="recipe-createdAt">
-                  <Translate contentKey="afparecetteApp.recipe.createdAt">Created At</Translate>
-                </Label>
-                <AvField id="recipe-createdAt" type="date" className="form-control" name="createdAt" />
-              </AvGroup>
-              <AvGroup>
-                <Label id="updatedAtLabel" for="recipe-updatedAt">
-                  <Translate contentKey="afparecetteApp.recipe.updatedAt">Updated At</Translate>
-                </Label>
-                <AvField id="recipe-updatedAt" type="date" className="form-control" name="updatedAt" />
-              </AvGroup>
+              
               <AvGroup>
                 <Label for="recipe-ingredient">
                   <Translate contentKey="afparecetteApp.recipe.ingredient">Ingredient</Translate>
@@ -378,7 +361,7 @@ const mapDispatchToProps = {
   updateEntity,
   setBlob,
   createEntity,
-  reset,
+  reset,  
 };
 
 type StateProps = ReturnType<typeof mapStateToProps>;

@@ -14,8 +14,6 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -33,15 +31,6 @@ public class UserInfoResourceIT {
 
     private static final Boolean DEFAULT_NEWSLETTER = false;
     private static final Boolean UPDATED_NEWSLETTER = true;
-
-    private static final LocalDate DEFAULT_CREATED_AT = LocalDate.ofEpochDay(0L);
-    private static final LocalDate UPDATED_CREATED_AT = LocalDate.now(ZoneId.systemDefault());
-
-    private static final LocalDate DEFAULT_UPDATED_AT = LocalDate.ofEpochDay(0L);
-    private static final LocalDate UPDATED_UPDATED_AT = LocalDate.now(ZoneId.systemDefault());
-
-    private static final String DEFAULT_USER_NAME = "AAAAAAAAAA";
-    private static final String UPDATED_USER_NAME = "BBBBBBBBBB";
 
     @Autowired
     private UserInfoRepository userInfoRepository;
@@ -62,10 +51,7 @@ public class UserInfoResourceIT {
      */
     public static UserInfo createEntity(EntityManager em) {
         UserInfo userInfo = new UserInfo()
-            .newsletter(DEFAULT_NEWSLETTER)
-            .createdAt(DEFAULT_CREATED_AT)
-            .updatedAt(DEFAULT_UPDATED_AT)
-            .userName(DEFAULT_USER_NAME);
+            .newsletter(DEFAULT_NEWSLETTER);
         return userInfo;
     }
     /**
@@ -76,10 +62,7 @@ public class UserInfoResourceIT {
      */
     public static UserInfo createUpdatedEntity(EntityManager em) {
         UserInfo userInfo = new UserInfo()
-            .newsletter(UPDATED_NEWSLETTER)
-            .createdAt(UPDATED_CREATED_AT)
-            .updatedAt(UPDATED_UPDATED_AT)
-            .userName(UPDATED_USER_NAME);
+            .newsletter(UPDATED_NEWSLETTER);
         return userInfo;
     }
 
@@ -103,9 +86,6 @@ public class UserInfoResourceIT {
         assertThat(userInfoList).hasSize(databaseSizeBeforeCreate + 1);
         UserInfo testUserInfo = userInfoList.get(userInfoList.size() - 1);
         assertThat(testUserInfo.isNewsletter()).isEqualTo(DEFAULT_NEWSLETTER);
-        assertThat(testUserInfo.getCreatedAt()).isEqualTo(DEFAULT_CREATED_AT);
-        assertThat(testUserInfo.getUpdatedAt()).isEqualTo(DEFAULT_UPDATED_AT);
-        assertThat(testUserInfo.getUserName()).isEqualTo(DEFAULT_USER_NAME);
     }
 
     @Test
@@ -139,10 +119,7 @@ public class UserInfoResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(userInfo.getId().intValue())))
-            .andExpect(jsonPath("$.[*].newsletter").value(hasItem(DEFAULT_NEWSLETTER.booleanValue())))
-            .andExpect(jsonPath("$.[*].createdAt").value(hasItem(DEFAULT_CREATED_AT.toString())))
-            .andExpect(jsonPath("$.[*].updatedAt").value(hasItem(DEFAULT_UPDATED_AT.toString())))
-            .andExpect(jsonPath("$.[*].userName").value(hasItem(DEFAULT_USER_NAME)));
+            .andExpect(jsonPath("$.[*].newsletter").value(hasItem(DEFAULT_NEWSLETTER.booleanValue())));
     }
     
     @Test
@@ -156,10 +133,7 @@ public class UserInfoResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(userInfo.getId().intValue()))
-            .andExpect(jsonPath("$.newsletter").value(DEFAULT_NEWSLETTER.booleanValue()))
-            .andExpect(jsonPath("$.createdAt").value(DEFAULT_CREATED_AT.toString()))
-            .andExpect(jsonPath("$.updatedAt").value(DEFAULT_UPDATED_AT.toString()))
-            .andExpect(jsonPath("$.userName").value(DEFAULT_USER_NAME));
+            .andExpect(jsonPath("$.newsletter").value(DEFAULT_NEWSLETTER.booleanValue()));
     }
     @Test
     @Transactional
@@ -182,10 +156,7 @@ public class UserInfoResourceIT {
         // Disconnect from session so that the updates on updatedUserInfo are not directly saved in db
         em.detach(updatedUserInfo);
         updatedUserInfo
-            .newsletter(UPDATED_NEWSLETTER)
-            .createdAt(UPDATED_CREATED_AT)
-            .updatedAt(UPDATED_UPDATED_AT)
-            .userName(UPDATED_USER_NAME);
+            .newsletter(UPDATED_NEWSLETTER);
 
         restUserInfoMockMvc.perform(put("/api/user-infos")
             .contentType(MediaType.APPLICATION_JSON)
@@ -197,9 +168,6 @@ public class UserInfoResourceIT {
         assertThat(userInfoList).hasSize(databaseSizeBeforeUpdate);
         UserInfo testUserInfo = userInfoList.get(userInfoList.size() - 1);
         assertThat(testUserInfo.isNewsletter()).isEqualTo(UPDATED_NEWSLETTER);
-        assertThat(testUserInfo.getCreatedAt()).isEqualTo(UPDATED_CREATED_AT);
-        assertThat(testUserInfo.getUpdatedAt()).isEqualTo(UPDATED_UPDATED_AT);
-        assertThat(testUserInfo.getUserName()).isEqualTo(UPDATED_USER_NAME);
     }
 
     @Test

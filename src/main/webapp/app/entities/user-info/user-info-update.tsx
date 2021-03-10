@@ -2,15 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { Button, Row, Col, Label } from 'reactstrap';
-import { AvFeedback, AvForm, AvGroup, AvInput, AvField } from 'availity-reactstrap-validation';
+import { AvFeedback, AvForm, AvGroup, AvInput } from 'availity-reactstrap-validation';
 import { Translate, translate, ICrudGetAction, ICrudGetAllAction, ICrudPutAction } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 
 import { IUser } from 'app/shared/model/user.model';
 import { getUsers } from 'app/modules/administration/user-management/user-management.reducer';
-import { IRole } from 'app/shared/model/role.model';
-import { getEntities as getRoles } from 'app/entities/role/role.reducer';
 import { IReward } from 'app/shared/model/reward.model';
 import { getEntities as getRewards } from 'app/entities/reward/reward.reducer';
 import { getEntity, updateEntity, createEntity, reset } from './user-info.reducer';
@@ -22,11 +20,10 @@ export interface IUserInfoUpdateProps extends StateProps, DispatchProps, RouteCo
 
 export const UserInfoUpdate = (props: IUserInfoUpdateProps) => {
   const [userId, setUserId] = useState('0');
-  const [roleId, setRoleId] = useState('0');
   const [rewardId, setRewardId] = useState('0');
   const [isNew, setIsNew] = useState(!props.match.params || !props.match.params.id);
 
-  const { userInfoEntity, users, roles, rewards, loading, updating } = props;
+  const { userInfoEntity, users, rewards, loading, updating } = props;
 
   const handleClose = () => {
     props.history.push('/user-info');
@@ -40,7 +37,6 @@ export const UserInfoUpdate = (props: IUserInfoUpdateProps) => {
     }
 
     props.getUsers();
-    props.getRoles();
     props.getRewards();
   }, []);
 
@@ -95,24 +91,6 @@ export const UserInfoUpdate = (props: IUserInfoUpdateProps) => {
                 </Label>
               </AvGroup>
               <AvGroup>
-                <Label id="createdAtLabel" for="user-info-createdAt">
-                  <Translate contentKey="afparecetteApp.userInfo.createdAt">Created At</Translate>
-                </Label>
-                <AvField id="user-info-createdAt" type="date" className="form-control" name="createdAt" />
-              </AvGroup>
-              <AvGroup>
-                <Label id="updatedAtLabel" for="user-info-updatedAt">
-                  <Translate contentKey="afparecetteApp.userInfo.updatedAt">Updated At</Translate>
-                </Label>
-                <AvField id="user-info-updatedAt" type="date" className="form-control" name="updatedAt" />
-              </AvGroup>
-              <AvGroup>
-                <Label id="userNameLabel" for="user-info-userName">
-                  <Translate contentKey="afparecetteApp.userInfo.userName">User Name</Translate>
-                </Label>
-                <AvField id="user-info-userName" type="text" name="userName" />
-              </AvGroup>
-              <AvGroup>
                 <Label for="user-info-user">
                   <Translate contentKey="afparecetteApp.userInfo.user">User</Translate>
                 </Label>
@@ -120,21 +98,6 @@ export const UserInfoUpdate = (props: IUserInfoUpdateProps) => {
                   <option value="" key="0" />
                   {users
                     ? users.map(otherEntity => (
-                        <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
-                        </option>
-                      ))
-                    : null}
-                </AvInput>
-              </AvGroup>
-              <AvGroup>
-                <Label for="user-info-role">
-                  <Translate contentKey="afparecetteApp.userInfo.role">Role</Translate>
-                </Label>
-                <AvInput id="user-info-role" type="select" className="form-control" name="role.id">
-                  <option value="" key="0" />
-                  {roles
-                    ? roles.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
                           {otherEntity.id}
                         </option>
@@ -180,7 +143,6 @@ export const UserInfoUpdate = (props: IUserInfoUpdateProps) => {
 
 const mapStateToProps = (storeState: IRootState) => ({
   users: storeState.userManagement.users,
-  roles: storeState.role.entities,
   rewards: storeState.reward.entities,
   userInfoEntity: storeState.userInfo.entity,
   loading: storeState.userInfo.loading,
@@ -190,7 +152,6 @@ const mapStateToProps = (storeState: IRootState) => ({
 
 const mapDispatchToProps = {
   getUsers,
-  getRoles,
   getRewards,
   getEntity,
   updateEntity,

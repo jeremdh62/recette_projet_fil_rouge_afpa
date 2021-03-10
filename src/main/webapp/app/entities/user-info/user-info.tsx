@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { Button, Col, Row, Table } from 'reactstrap';
-import { Translate, ICrudGetAllAction, TextFormat } from 'react-jhipster';
+import { Translate, ICrudGetAllAction } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { IRootState } from 'app/shared/reducers';
@@ -40,19 +40,7 @@ export const UserInfo = (props: IUserInfoProps) => {
                   <Translate contentKey="afparecetteApp.userInfo.newsletter">Newsletter</Translate>
                 </th>
                 <th>
-                  <Translate contentKey="afparecetteApp.userInfo.createdAt">Created At</Translate>
-                </th>
-                <th>
-                  <Translate contentKey="afparecetteApp.userInfo.updatedAt">Updated At</Translate>
-                </th>
-                <th>
-                  <Translate contentKey="afparecetteApp.userInfo.userName">User Name</Translate>
-                </th>
-                <th>
                   <Translate contentKey="afparecetteApp.userInfo.user">User</Translate>
-                </th>
-                <th>
-                  <Translate contentKey="afparecetteApp.userInfo.role">Role</Translate>
                 </th>
                 <th>
                   <Translate contentKey="afparecetteApp.userInfo.reward">Reward</Translate>
@@ -69,15 +57,7 @@ export const UserInfo = (props: IUserInfoProps) => {
                     </Button>
                   </td>
                   <td>{userInfo.newsletter ? 'true' : 'false'}</td>
-                  <td>
-                    {userInfo.createdAt ? <TextFormat type="date" value={userInfo.createdAt} format={APP_LOCAL_DATE_FORMAT} /> : null}
-                  </td>
-                  <td>
-                    {userInfo.updatedAt ? <TextFormat type="date" value={userInfo.updatedAt} format={APP_LOCAL_DATE_FORMAT} /> : null}
-                  </td>
-                  <td>{userInfo.userName}</td>
                   <td>{userInfo.user ? userInfo.user.id : ''}</td>
-                  <td>{userInfo.role ? <Link to={`role/${userInfo.role.id}`}>{userInfo.role.id}</Link> : ''}</td>
                   <td>{userInfo.reward ? <Link to={`reward/${userInfo.reward.id}`}>{userInfo.reward.id}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">

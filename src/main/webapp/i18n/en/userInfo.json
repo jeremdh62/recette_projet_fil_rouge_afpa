@@ -17,14 +17,10 @@
         "title": "User Info"
       },
       "newsletter": "Newsletter",
-      "createdAt": "Created At",
-      "updatedAt": "Updated At",
-      "userName": "User Name",
       "user": "User",
       "note": "Note",
       "recipe": "Recipe",
       "comments": "Comments",
-      "role": "Role",
       "reward": "Reward"
     }
   }

@@ -36,9 +36,6 @@ export const Role = (props: IRoleProps) => {
                 <th>
                   <Translate contentKey="global.field.id">ID</Translate>
                 </th>
-                <th>
-                  <Translate contentKey="afparecetteApp.role.role">Role</Translate>
-                </th>
                 <th />
               </tr>
             </thead>
@@ -50,7 +47,6 @@ export const Role = (props: IRoleProps) => {
                       {role.id}
                     </Button>
                   </td>
-                  <td>{role.role}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${role.id}`} color="info" size="sm">

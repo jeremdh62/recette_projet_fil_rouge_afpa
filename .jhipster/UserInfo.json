@@ -4,18 +4,6 @@
     {
       "fieldName": "newsletter",
       "fieldType": "Boolean"
-    },
-    {
-      "fieldName": "createdAt",
-      "fieldType": "LocalDate"
-    },
-    {
-      "fieldName": "updatedAt",
-      "fieldType": "LocalDate"
-    },
-    {
-      "fieldName": "userName",
-      "fieldType": "String"
     }
   ],
   "relationships": [
@@ -47,13 +35,6 @@
     },
     {
       "relationshipType": "many-to-one",
-      "otherEntityName": "role",
-      "otherEntityRelationshipName": "userInfo",
-      "relationshipName": "role",
-      "otherEntityField": "id"
-    },
-    {
-      "relationshipType": "many-to-one",
       "otherEntityName": "reward",
       "otherEntityRelationshipName": "userInfo",
       "relationshipName": "reward",
@@ -70,5 +51,7 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": "*"
+  "applications": "*",
+  "searchEngine": false,
+  "databaseType": "sql"
 }

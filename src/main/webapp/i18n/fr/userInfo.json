@@ -2,30 +2,26 @@
   "afparecetteApp": {
     "userInfo": {
       "home": {
-        "title": "Utilisateurs",
-        "createLabel": "Créer un nouveau Utilisateur",
-        "createOrEditLabel": "Créer ou éditer un Utilisateur",
-        "notFound": "Aucun Utilisateur trouvé"
+        "title": "UserInfos",
+        "createLabel": "Créer un nouveau User Info",
+        "createOrEditLabel": "Créer ou éditer un User Info",
+        "notFound": "Aucun User Info trouvé"
       },
-      "created": "Un nouveau Utilisateur a été créé avec l'identifiant {{ param }}",
-      "updated": "L'Utilisateur avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "L'Utilisateur avec l'identifiant {{ param }} a été supprimé",
+      "created": "Un nouveau User Info a été créé avec l'identifiant {{ param }}",
+      "updated": "Le User Info avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le User Info avec l'identifiant {{ param }} a été supprimé",
       "delete": {
-        "question": "Etes-vous certain de vouloir supprimer l'Utilisateur {{ id }} ?"
+        "question": "Etes-vous certain de vouloir supprimer le User Info {{ id }} ?"
       },
       "detail": {
-        "title": "Utilisateur"
+        "title": "User Info"
       },
       "newsletter": "Newsletter",
-      "createdAt": "Created At",
-      "updatedAt": "Updated At",
-      "userName": "Nom d'utilisateur",
-      "user": "Utilisateur",
+      "user": "User",
       "note": "Note",
-      "recipe": "Recette",
-      "comments": "Commentaire",
-      "role": "Role",
-      "reward": "Récompense"
+      "recipe": "Recipe",
+      "comments": "Comments",
+      "reward": "Reward"
     }
   }
 }

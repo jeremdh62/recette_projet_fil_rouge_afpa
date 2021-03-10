@@ -29,9 +29,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WithMockUser
 public class RoleResourceIT {
 
-    private static final String DEFAULT_ROLE = "AAAAAAAAAA";
-    private static final String UPDATED_ROLE = "BBBBBBBBBB";
-
     @Autowired
     private RoleRepository roleRepository;
 
@@ -50,8 +47,7 @@ public class RoleResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Role createEntity(EntityManager em) {
-        Role role = new Role()
-            .role(DEFAULT_ROLE);
+        Role role = new Role();
         return role;
     }
     /**
@@ -61,8 +57,7 @@ public class RoleResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Role createUpdatedEntity(EntityManager em) {
-        Role role = new Role()
-            .role(UPDATED_ROLE);
+        Role role = new Role();
         return role;
     }
 
@@ -85,7 +80,6 @@ public class RoleResourceIT {
         List<Role> roleList = roleRepository.findAll();
         assertThat(roleList).hasSize(databaseSizeBeforeCreate + 1);
         Role testRole = roleList.get(roleList.size() - 1);
-        assertThat(testRole.getRole()).isEqualTo(DEFAULT_ROLE);
     }
 
     @Test
@@ -118,8 +112,7 @@ public class RoleResourceIT {
         restRoleMockMvc.perform(get("/api/roles?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(role.getId().intValue())))
-            .andExpect(jsonPath("$.[*].role").value(hasItem(DEFAULT_ROLE)));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(role.getId().intValue())));
     }
     
     @Test
@@ -132,8 +125,7 @@ public class RoleResourceIT {
         restRoleMockMvc.perform(get("/api/roles/{id}", role.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
-            .andExpect(jsonPath("$.id").value(role.getId().intValue()))
-            .andExpect(jsonPath("$.role").value(DEFAULT_ROLE));
+            .andExpect(jsonPath("$.id").value(role.getId().intValue()));
     }
     @Test
     @Transactional
@@ -155,8 +147,6 @@ public class RoleResourceIT {
         Role updatedRole = roleRepository.findById(role.getId()).get();
         // Disconnect from session so that the updates on updatedRole are not directly saved in db
         em.detach(updatedRole);
-        updatedRole
-            .role(UPDATED_ROLE);
 
         restRoleMockMvc.perform(put("/api/roles")
             .contentType(MediaType.APPLICATION_JSON)
@@ -167,7 +157,6 @@ public class RoleResourceIT {
         List<Role> roleList = roleRepository.findAll();
         assertThat(roleList).hasSize(databaseSizeBeforeUpdate);
         Role testRole = roleList.get(roleList.size() - 1);
-        assertThat(testRole.getRole()).isEqualTo(UPDATED_ROLE);
     }
 
     @Test
