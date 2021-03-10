@@ -68,7 +68,7 @@ const Footer = props => (
           <hr />
           <div className="row droits">
             <div className="col-lg-12">
-              <span className="droits">Tous droits résrvés Marmiton.org - 1999-2021</span>
+              <span className="droits">Tous droits résrvés Afpa Recette - 2021</span>
             </div>
           </div>
 
