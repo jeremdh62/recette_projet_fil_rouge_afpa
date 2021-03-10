@@ -44,7 +44,7 @@ class LoginModal extends React.Component<ILoginModalProps> {
                   label={translate('global.form.username.label')}
                   placeholder={translate('global.form.username.placeholder')}
                   required
-                  errorMessage="Username cannot be empty!"
+                  errorMessage={translate('login.messages.error.isEmpty')}
                   autoFocus
                 />
                 <AvField
@@ -53,7 +53,7 @@ class LoginModal extends React.Component<ILoginModalProps> {
                   label={translate('login.form.password')}
                   placeholder={translate('login.form.password.placeholder')}
                   required
-                  errorMessage="Password cannot be empty!"
+                  errorMessage={translate('login.messages.error.isEmpty')}
                 />
                 <AvGroup check inline>
                   <Label className="form-check-label">
@@ -83,7 +83,9 @@ class LoginModal extends React.Component<ILoginModalProps> {
             <Button color="secondary" onClick={handleClose} tabIndex="1">
               <Translate contentKey="entity.action.cancel">Cancel</Translate>
             </Button>{' '}
-            <Button className="auth-btn-new-account" type="submit">
+
+            <Button className="auth-btn-new-account mandarin" type="submit">
+
               <Translate contentKey="login.form.button">Sign in</Translate>
             </Button>
           </ModalFooter>
