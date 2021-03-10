@@ -23,7 +23,7 @@ export interface IHeaderProps {
 }
 
 const Header = (props: IHeaderProps) => {
-  const [menuOpen, setMenuOpen] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLocaleChange = event => {
     const langKey = event.target.value;
@@ -45,31 +45,27 @@ const Header = (props: IHeaderProps) => {
   /* jhipster-needle-add-element-to-menu - JHipster will add new menu items here */
 
   return (
-    <header className="fixed-top">
-      <div className="d-flex justify-content-between height-row-bar">
-        <h1 className="col-4 d-flex align-items-center">
-          <Brand/>
-         
-        </h1>
-        <form className="col-4 d-flex algn-items-center form-inline">
-          <input className="rounded-pill col-12" type="search" placeholder="Search" />
-        </form>
-        <div className="d-flex col-4 flex-row-reverse">
-          <Collapse isOpen={menuOpen}>
-            <Nav id="header-tabs" className="d-flex flex-row justify-content-around align-items-center h-100">
-              <Home />
-              {props.isAuthenticated && props.isAdmin && <EntitiesMenu />}
-              {props.isAuthenticated && props.isAdmin && (
-                <AdminMenu showSwagger={props.isSwaggerEnabled} showDatabase={!props.isInProduction} />
-              )}
-              <LocaleMenu currentLocale={props.currentLocale} onClick={handleLocaleChange} />
-              <AccountMenu isAuthenticated={props.isAuthenticated} />
-            </Nav>
-          </Collapse>
-        </div>
-      </div>
-      <BarreMenu />
-    </header>
+    <div id="app-header">
+      {/* {renderDevRibbon()} */}
+      <LoadingBar className="loading-bar" />
+      <Navbar dark expand="sm" fixed="top" className="jh-navbar">
+        <NavbarToggler aria-label="Menu" onClick={toggleMenu} />
+        <Brand />
+        <Collapse isOpen={menuOpen} navbar>
+          <Nav id="header-tabs" className="ml-auto" navbar>
+            <Home />
+            {props.isAuthenticated && <EntitiesMenu />}
+            {props.isAuthenticated && props.isAdmin && (
+              <AdminMenu showSwagger={props.isSwaggerEnabled} showDatabase={!props.isInProduction} />
+            )}
+            <LocaleMenu currentLocale={props.currentLocale} onClick={handleLocaleChange} />
+            <AccountMenu isAuthenticated={props.isAuthenticated} />
+          </Nav>
+        </Collapse>
+      </Navbar>
+      <BarreMenu/>
+
+    </div>
   );
 };
 
