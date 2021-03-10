@@ -38,13 +38,14 @@ Developement Ribbon
 Navbar styles
 ========================================================================== */
 .jh-navbar {
-  background-color: #353d47;
+  background-color: rgb(255, 128, 164);
   padding: 0.2em 1em;
   .profile-image {
     margin: -10px 0px;
     height: 40px;
     width: 40px;
     border-radius: 50%;
+    font-family: Century Gothic;
   }
   .dropdown-item.active,
   .dropdown-item.active:focus,
@@ -56,16 +57,19 @@ Navbar styles
   }
   ul.navbar-nav {
     padding: 0.5em;
+    color: #fff;
     .nav-item {
       margin-left: 1.5rem;
     }
   }
   a.nav-link {
     font-weight: 400;
+    color: #fff !important;
     > span {
       margin-left: 5px;
     }
   }
+
   .jh-navbar-toggler {
     color: #ccc;
     font-size: 1.5em;
@@ -110,4 +114,49 @@ Navbar styles
   position: absolute;
   top: 0px;
   z-index: 1031;
+}
+.navbar {
+  background-color: #e55039;
+  color: #fff;
+}
+.form-inline {
+  margin: 0 auto;
+  margin-left: 350px;
+}
+.form {
+  width: 700px;
+  height: 40px;
+  border: none;
+}
+.navbar-collapse {
+  background-color: #e55039;
+}
+// .head {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: #e55039;
+//   position: relative;
+//   z-index: 1;
+// }
+i {
+  color: #fff;
+}
+.chef {
+  width: 60px;
+}
+@media screen and (max-width: 950px) {
+  #header-tabs {
+    display: none;
+  }
+}
+@media screen and (max-width: 575px) {
+  #header-tabs {
+    display: list-item;
+  }
+}
+@media screen and (max-width: 375px) {
+  .brand-title {
+    margin-top: 2px !important;
+  }
 }

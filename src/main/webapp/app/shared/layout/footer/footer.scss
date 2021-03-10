@@ -1,3 +1,43 @@
 .footer {
-  height: 50px;
+  height: 400px;
+  width: 100%;
+  background-color: #e55039;
+  color: #fff;
+  margin-top: 30px;
+  // margin-bottom: 0;
+  text-align: center;
+  position: absolute;
+}
+.droits {
+  margin-top: 55px;
+}
+li {
+  list-style: none;
+}
+@media screen and (max-width: 993px) {
+  .logo-reseaux {
+    flex-wrap: nowrap;
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .ing {
+    font-size: 5px;
+  }
+  .ingredients {
+    font-size: 13px;
+    padding-bottom: 5px;
+  }
+  ul {
+    display: none;
+  }
+  .logo-reseaux {
+    font-size: 1opx;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+  .fab {
+    font-size: 40px;
+  }
 }
