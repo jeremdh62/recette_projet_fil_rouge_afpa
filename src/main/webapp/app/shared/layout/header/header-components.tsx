@@ -36,3 +36,13 @@ export const Home = props => (
     </NavLink>
   </NavItem>
 );
+export const UserRecipe = props => (
+  <NavItem>
+    <NavLink tag={Link} to="/recipe/new" className="d-flex align-items-center">
+      <i className="fas fa-utensils"></i>
+      <span>
+        <Translate contentKey="global.menu.userRecipe"></Translate>
+      </span>
+    </NavLink>
+  </NavItem>
+)
