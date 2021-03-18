@@ -15,7 +15,7 @@ import appConfig from 'app/config/constants';
 
 export const Brand = props => (
   <NavbarBrand tag={Link} to="/" className="brand-logo d-flex">
-    <span className="brand-title mt-4">
+    <span className="brand-title">
       <Translate contentKey="global.title">Afparecette</Translate>
       <img className="chef" src="content/images/logochef2.png" alt="Logo" />
 

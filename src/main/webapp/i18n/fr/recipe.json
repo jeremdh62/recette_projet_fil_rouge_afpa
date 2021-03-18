@@ -16,7 +16,7 @@
       "detail": {
         "title": "Recette"
       },
-      "name": "Nom",
+      "name": "Titre de la recette",
       "description": "Description",
       "picture": "Photo",
       "video": "Vidéo",

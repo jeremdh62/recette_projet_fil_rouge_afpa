@@ -119,6 +119,12 @@ Navbar styles
   background-color: #e55039;
   color: #fff;
 }
+@media screen and (max-width: 720px) {
+  .navbar {
+    box-shadow: 0px 2px 4px black;
+  }
+}
+
 .form-inline {
   margin: 0 auto;
   margin-left: 350px;
