@@ -76,14 +76,6 @@ export const NoteUpdate = (props: INoteUpdateProps) => {
             <p>Loading...</p>
           ) : (
             <AvForm model={isNew ? {} : noteEntity} onSubmit={saveEntity}>
-              {!isNew ? (
-                <AvGroup>
-                  <Label for="note-id">
-                    <Translate contentKey="global.field.id">ID</Translate>
-                  </Label>
-                  <AvInput id="note-id" type="text" className="form-control" name="id" required readOnly />
-                </AvGroup>
-              ) : null}
               <AvGroup>
                 <Label id="noteLabel" for="note-note">
                   <Translate contentKey="afparecetteApp.note.note">Note</Translate>
@@ -99,7 +91,7 @@ export const NoteUpdate = (props: INoteUpdateProps) => {
                   {recipes
                     ? recipes.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
+                          {otherEntity.name}
                         </option>
                       ))
                     : null}
@@ -114,7 +106,7 @@ export const NoteUpdate = (props: INoteUpdateProps) => {
                   {userInfos
                     ? userInfos.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
+                          {otherEntity.user.login}
                         </option>
                       ))
                     : null}

@@ -30,27 +30,20 @@ export const Ustensil = (props: IUstensilProps) => {
       </h2>
       <div className="table-responsive">
         {ustensilList && ustensilList.length > 0 ? (
-          <Table responsive>
+          <Table responsive striped bordered>
             <thead>
               <tr>
-                <th>
-                  <Translate contentKey="global.field.id">ID</Translate>
-                </th>
+              <th />
                 <th>
                   <Translate contentKey="afparecetteApp.ustensil.ustensil">Ustensil</Translate>
                 </th>
-                <th />
+                
               </tr>
             </thead>
             <tbody>
               {ustensilList.map((ustensil, i) => (
                 <tr key={`entity-${i}`}>
-                  <td>
-                    <Button tag={Link} to={`${match.url}/${ustensil.id}`} color="link" size="sm">
-                      {ustensil.id}
-                    </Button>
-                  </td>
-                  <td>{ustensil.ustensil}</td>
+
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${ustensil.id}`} color="info" size="sm">
@@ -73,6 +66,9 @@ export const Ustensil = (props: IUstensilProps) => {
                       </Button>
                     </div>
                   </td>
+        
+                  <td>{ustensil.ustensil}</td>
+                  
                 </tr>
               ))}
             </tbody>

@@ -30,12 +30,10 @@ export const Comments = (props: ICommentsProps) => {
       </h2>
       <div className="table-responsive">
         {commentsList && commentsList.length > 0 ? (
-          <Table responsive>
+          <Table responsive striped bordered>
             <thead>
               <tr>
-                <th>
-                  <Translate contentKey="global.field.id">ID</Translate>
-                </th>
+                <th />
                 <th>
                   <Translate contentKey="afparecetteApp.comments.comments">Comments</Translate>
                 </th>
@@ -45,21 +43,12 @@ export const Comments = (props: ICommentsProps) => {
                 <th>
                   <Translate contentKey="afparecetteApp.comments.recipe">Recipe</Translate>
                 </th>
-                <th />
               </tr>
             </thead>
             <tbody>
               {commentsList.map((comments, i) => (
                 <tr key={`entity-${i}`}>
-                  <td>
-                    <Button tag={Link} to={`${match.url}/${comments.id}`} color="link" size="sm">
-                      {comments.id}
-                    </Button>
-                  </td>
-                  <td>{comments.comments}</td>
-                  <td>{comments.userinfo ? <Link to={`user-info/${comments.userinfo.id}`}>{comments.userinfo.id}</Link> : ''}</td>
-                  <td>{comments.recipe ? <Link to={`recipe/${comments.recipe.id}`}>{comments.recipe.id}</Link> : ''}</td>
-                  <td className="text-right">
+                  <td className="text-center">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${comments.id}`} color="info" size="sm">
                         <FontAwesomeIcon icon="eye" />{' '}
@@ -81,6 +70,9 @@ export const Comments = (props: ICommentsProps) => {
                       </Button>
                     </div>
                   </td>
+                  <td>{comments.comments}</td>
+                  <td>{comments.userinfo ? <Link to={`user-info/${comments.userinfo.id}`}>{comments.userinfo.user.login}</Link> : ''}</td>
+                  <td>{comments.recipe ? <Link to={`recipe/${comments.recipe.id}`}>{comments.recipe.name}</Link> : ''}</td>
                 </tr>
               ))}
             </tbody>

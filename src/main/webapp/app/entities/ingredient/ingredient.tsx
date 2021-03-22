@@ -30,27 +30,20 @@ export const Ingredient = (props: IIngredientProps) => {
       </h2>
       <div className="table-responsive">
         {ingredientList && ingredientList.length > 0 ? (
-          <Table responsive>
+          <Table responsive striped bordered>
             <thead>
               <tr>
-                <th>
-                  <Translate contentKey="global.field.id">ID</Translate>
-                </th>
+              <th />
                 <th>
                   <Translate contentKey="afparecetteApp.ingredient.ingredient">Ingredient</Translate>
                 </th>
-                <th />
+                
               </tr>
             </thead>
             <tbody>
               {ingredientList.map((ingredient, i) => (
                 <tr key={`entity-${i}`}>
-                  <td>
-                    <Button tag={Link} to={`${match.url}/${ingredient.id}`} color="link" size="sm">
-                      {ingredient.id}
-                    </Button>
-                  </td>
-                  <td>{ingredient.ingredient}</td>
+                  
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${ingredient.id}`} color="info" size="sm">
@@ -73,6 +66,8 @@ export const Ingredient = (props: IIngredientProps) => {
                       </Button>
                     </div>
                   </td>
+                  
+                  <td>{ingredient.ingredient}</td>
                 </tr>
               ))}
             </tbody>
