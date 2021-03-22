@@ -226,17 +226,17 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 										<div className="mt-3 d-flex flex-column">
 										 {idsingredient ? idsingredient.map(
 												otherEntity => (
-													<div className="text-white p-3 bg-mandarin rounded mb-2 font-weight-bold d-flex justify-content-between" id={otherEntity} key={otherEntity}>
+													<div className="text-white p-3 bg-mandarin rounded mb-2 font-weight-bold" id={otherEntity} key={otherEntity}>
 													{idsingredient ?
 														<div>
 														{
 															ingredients ?
 															ingredients.map(
 																otherIngredient => (
-															<span key={otherIngredient.id}>
-																{otherEntity === otherIngredient.id && otherIngredient.ingredient}
-																{otherEntity === otherIngredient.id && <button onClick={() => removeTableIngredient(otherEntity)}>{otherEntity}<i className="fas fa-times-circle"></i></button>}
-															</span>
+															<div key={otherIngredient.id} className="d-flex justify-content-between">
+																<span>{otherEntity === otherIngredient.id && otherIngredient.ingredient}</span>
+																{otherEntity === otherIngredient.id && <span onClick={() => removeTableIngredient(otherEntity)}><i className="fas fa-times-circle"></i></span>}
+															</div>
 															
 															))
 															:null
@@ -258,11 +258,10 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 									<div className="font-weight-bold add-plus" onClick={() => setShowUstensils(!showUstensils)}>+</div>
 									{ 
 											showUstensils ? <AvInput
-										
 											id="recipe-ustensil"
 											type="select"
 											multiple
-											className="form-control"
+											className="form-control mt-3"
 											name="ustensils"
 											value={recipeEntity.ustensils && recipeEntity.ustensils.map(e => e.id)}
 										>
@@ -279,17 +278,17 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 									<div className="mt-3 d-flex flex-column">
 										 {idsustensil ? idsustensil.map(
 												otherEntity => (
-													<div className="text-white p-3 bg-mandarin rounded mb-2 font-weight-bold d-flex justify-content-between" id={otherEntity} key={otherEntity}>
+													<div className="text-white p-3 bg-mandarin rounded mb-2 font-weight-bold" id={otherEntity} key={otherEntity}>
 													{idsustensil ?
 														<div>
 														{
 															ustensils ?
 															ustensils.map(
 																otherUstensil => (
-															<span key={otherUstensil.id}>
+															<div key={otherUstensil.id} className="d-flex justify-content-between">
 																{otherEntity === otherUstensil.id && otherUstensil.ustensil}
-																{otherEntity === otherUstensil.id && <button onClick={() => removeTableUstensil(otherEntity)}>{otherEntity}<i className="fas fa-times-circle"></i></button>}
-															</span>
+																{otherEntity === otherUstensil.id && <span onClick={() => removeTableUstensil(otherEntity)}><i className="fas fa-times-circle"></i></span>}
+															</div>
 															
 															))
 															:null
@@ -321,7 +320,7 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 										id="recipe-event"
 										type="select"
 										multiple
-										className="form-control"
+										className="form-control mt-3"
 										name="events"
 										value={recipeEntity.events && recipeEntity.events.map(e => e.id)}
 									>
@@ -341,17 +340,17 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 										 {
 											idsevent ? idsevent.map(
 												otherEntity => (
-													<div className="text-white p-3 bg-mandarin rounded mb-2 font-weight-bold d-flex justify-content-between" id={otherEntity} key={otherEntity}>
+													<div className="text-white p-3 bg-mandarin rounded mb-2 font-weight-bold" id={otherEntity} key={otherEntity}>
 													{idsevent ?
 														<div>
 														{
 															events ?
 															events.map(
 																otherEvent => (
-															<span key={otherEvent.id}>
+															<div key={otherEvent.id} className="d-flex justify-content-between">
 																{otherEntity === otherEvent.id && otherEvent.event}
-																{otherEntity === otherEvent.id && <button onClick={() => removeTableEvent(otherEntity)}>{otherEntity}<i className="fas fa-times-circle"></i></button>}
-															</span>
+																{otherEntity === otherEvent.id && <span onClick={() => removeTableEvent(otherEntity)}><i className="fas fa-times-circle"></i></span>}
+															</div>
 															
 															))
 															:null
