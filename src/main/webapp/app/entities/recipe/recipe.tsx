@@ -100,8 +100,9 @@ export const Recipe = (props: IRecipeProps) => {
               {recipeList.map((recipe, i) => (
                 <tr key={`entity-${i}`}>
 
-                  <td className="text-right">
+                  <td className="text-center">
                     <div  className="btn-group flex-btn-group-container">
+                     
                       <Button tag={Link} to={`${match.url}/${recipe.id}`} color="info" size="sm">
                         <FontAwesomeIcon icon="eye" />{' '}
                         <span className="d-none d-md-inline">
@@ -191,7 +192,7 @@ export const Recipe = (props: IRecipeProps) => {
                       ))
                       : null}
                   </td>
-                  <td>{recipe.userinfo ? <Link to={`user-info/${recipe.userinfo.id}`}>{recipe.userinfo.id}</Link> : ''}</td>
+                  <td>{recipe.userinfo ? <Link to={`user-info/${recipe.userinfo.id}`}>{recipe.userinfo.user.login}</Link> : ''}</td>
                 </tr>
               ))}
             </tbody>

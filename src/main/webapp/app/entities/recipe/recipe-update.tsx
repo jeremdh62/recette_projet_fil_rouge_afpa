@@ -312,7 +312,7 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
                   {userInfos
                     ? userInfos.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
+                          {otherEntity.user.login}
                         </option>
                       ))
                     : null}
