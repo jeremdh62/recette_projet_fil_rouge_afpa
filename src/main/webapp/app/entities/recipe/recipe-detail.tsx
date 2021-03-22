@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link, RouteComponentProps } from 'react-router-dom';
-import { Button, Row, Col } from 'reactstrap';
+import { Button, Row, Col, Card } from 'reactstrap';
 import { Translate, ICrudGetAction, openFile, byteSize, TextFormat } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -193,7 +193,7 @@ export const RecipeDetail = (props: IRecipeDetailProps) => {
           <dt>
             <Translate contentKey="afparecetteApp.recipe.userinfo">Userinfo</Translate>
           </dt>
-          <dd>{recipeEntity.userinfo ? recipeEntity.userinfo.id : ''}</dd>
+          <dd>{recipeEntity.userinfo ? recipeEntity.userinfo.user.login : ''}</dd>
         </dl>
         <Button tag={Link} to="/recipe" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}
