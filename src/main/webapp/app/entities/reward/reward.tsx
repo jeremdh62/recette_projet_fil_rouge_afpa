@@ -30,27 +30,19 @@ export const Reward = (props: IRewardProps) => {
       </h2>
       <div className="table-responsive">
         {rewardList && rewardList.length > 0 ? (
-          <Table responsive>
+          <Table responsive striped bordered>
             <thead>
               <tr>
-                <th>
-                  <Translate contentKey="global.field.id">ID</Translate>
-                </th>
+              <th />
                 <th>
                   <Translate contentKey="afparecetteApp.reward.reward">Reward</Translate>
                 </th>
-                <th />
               </tr>
             </thead>
             <tbody>
               {rewardList.map((reward, i) => (
                 <tr key={`entity-${i}`}>
-                  <td>
-                    <Button tag={Link} to={`${match.url}/${reward.id}`} color="link" size="sm">
-                      {reward.id}
-                    </Button>
-                  </td>
-                  <td>{reward.reward}</td>
+
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${reward.id}`} color="info" size="sm">
@@ -73,6 +65,9 @@ export const Reward = (props: IRewardProps) => {
                       </Button>
                     </div>
                   </td>
+
+                  <td>{reward.reward}</td>
+                  
                 </tr>
               ))}
             </tbody>

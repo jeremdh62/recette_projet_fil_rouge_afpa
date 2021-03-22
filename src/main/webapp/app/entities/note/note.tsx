@@ -28,14 +28,12 @@ export const Note = (props: INoteProps) => {
           <Translate contentKey="afparecetteApp.note.home.createLabel">Create new Note</Translate>
         </Link>
       </h2>
-      <div className="table-responsive">
+      <div className="table-responsive text-center">
         {noteList && noteList.length > 0 ? (
-          <Table responsive>
+          <Table responsive striped bordered>
             <thead>
               <tr>
-                <th>
-                  <Translate contentKey="global.field.id">ID</Translate>
-                </th>
+              <th />
                 <th>
                   <Translate contentKey="afparecetteApp.note.note">Note</Translate>
                 </th>
@@ -45,42 +43,42 @@ export const Note = (props: INoteProps) => {
                 <th>
                   <Translate contentKey="afparecetteApp.note.userinfo">Userinfo</Translate>
                 </th>
-                <th />
+                
               </tr>
             </thead>
-            <tbody>
+            <tbody className="text-center" >
               {noteList.map((note, i) => (
                 <tr key={`entity-${i}`}>
-                  <td>
-                    <Button tag={Link} to={`${match.url}/${note.id}`} color="link" size="sm">
-                      {note.id}
-                    </Button>
-                  </td>
-                  <td>{note.note}</td>
-                  <td>{note.recipe ? <Link to={`recipe/${note.recipe.id}`}>{note.recipe.id}</Link> : ''}</td>
-                  <td>{note.userinfo ? <Link to={`user-info/${note.userinfo.id}`}>{note.userinfo.id}</Link> : ''}</td>
-                  <td className="text-right">
+
+                   <td className="text-center">
                     <div className="btn-group flex-btn-group-container">
+
                       <Button tag={Link} to={`${match.url}/${note.id}`} color="info" size="sm">
                         <FontAwesomeIcon icon="eye" />{' '}
                         <span className="d-none d-md-inline">
                           <Translate contentKey="entity.action.view">View</Translate>
                         </span>
                       </Button>
+
                       <Button tag={Link} to={`${match.url}/${note.id}/edit`} color="primary" size="sm">
                         <FontAwesomeIcon icon="pencil-alt" />{' '}
                         <span className="d-none d-md-inline">
                           <Translate contentKey="entity.action.edit">Edit</Translate>
                         </span>
                       </Button>
+
                       <Button tag={Link} to={`${match.url}/${note.id}/delete`} color="danger" size="sm">
                         <FontAwesomeIcon icon="trash" />{' '}
                         <span className="d-none d-md-inline">
                           <Translate contentKey="entity.action.delete">Delete</Translate>
                         </span>
                       </Button>
+
                     </div>
                   </td>
+                  <td>{note.note}</td>
+                  <td>{note.recipe ? <Link to={`recipe/${note.recipe.id}`}>{note.recipe.name}</Link> : ''}</td>
+                  <td>{note.userinfo ? <Link to={`user-info/${note.userinfo.id}`}>{note.userinfo.user.login}</Link> : ''}</td>
                 </tr>
               ))}
             </tbody>

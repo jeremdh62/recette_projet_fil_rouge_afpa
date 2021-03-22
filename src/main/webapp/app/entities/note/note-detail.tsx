@@ -34,11 +34,11 @@ export const NoteDetail = (props: INoteDetailProps) => {
           <dt>
             <Translate contentKey="afparecetteApp.note.recipe">Recipe</Translate>
           </dt>
-          <dd>{noteEntity.recipe ? noteEntity.recipe.id : ''}</dd>
+          <dd>{noteEntity.recipe ? noteEntity.recipe.name : ''}</dd>
           <dt>
             <Translate contentKey="afparecetteApp.note.userinfo">Userinfo</Translate>
           </dt>
-          <dd>{noteEntity.userinfo ? noteEntity.userinfo.id : ''}</dd>
+          <dd>{noteEntity.userinfo ? noteEntity.userinfo.user.login : ''}</dd>
         </dl>
         <Button tag={Link} to="/note" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

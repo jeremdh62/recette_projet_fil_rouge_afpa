@@ -72,14 +72,7 @@ export const IngredientUpdate = (props: IIngredientUpdateProps) => {
             <p>Loading...</p>
           ) : (
             <AvForm model={isNew ? {} : ingredientEntity} onSubmit={saveEntity}>
-              {!isNew ? (
-                <AvGroup>
-                  <Label for="ingredient-id">
-                    <Translate contentKey="global.field.id">ID</Translate>
-                  </Label>
-                  <AvInput id="ingredient-id" type="text" className="form-control" name="id" required readOnly />
-                </AvGroup>
-              ) : null}
+              
               <AvGroup>
                 <Label id="ingredientLabel" for="ingredient-ingredient">
                   <Translate contentKey="afparecetteApp.ingredient.ingredient">Ingredient</Translate>

@@ -30,12 +30,10 @@ export const UserInfo = (props: IUserInfoProps) => {
       </h2>
       <div className="table-responsive">
         {userInfoList && userInfoList.length > 0 ? (
-          <Table responsive>
+          <Table responsive striped bordered>
             <thead>
               <tr>
-                <th>
-                  <Translate contentKey="global.field.id">ID</Translate>
-                </th>
+              <th />
                 <th>
                   <Translate contentKey="afparecetteApp.userInfo.newsletter">Newsletter</Translate>
                 </th>
@@ -45,21 +43,14 @@ export const UserInfo = (props: IUserInfoProps) => {
                 <th>
                   <Translate contentKey="afparecetteApp.userInfo.reward">Reward</Translate>
                 </th>
-                <th />
+                
               </tr>
             </thead>
             <tbody>
               {userInfoList.map((userInfo, i) => (
                 <tr key={`entity-${i}`}>
-                  <td>
-                    <Button tag={Link} to={`${match.url}/${userInfo.id}`} color="link" size="sm">
-                      {userInfo.id}
-                    </Button>
-                  </td>
-                  <td>{userInfo.newsletter ? 'true' : 'false'}</td>
-                  <td>{userInfo.user ? userInfo.user.id : ''}</td>
-                  <td>{userInfo.reward ? <Link to={`reward/${userInfo.reward.id}`}>{userInfo.reward.id}</Link> : ''}</td>
-                  <td className="text-right">
+
+                  <td className="text-center">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${userInfo.id}`} color="info" size="sm">
                         <FontAwesomeIcon icon="eye" />{' '}
@@ -81,6 +72,10 @@ export const UserInfo = (props: IUserInfoProps) => {
                       </Button>
                     </div>
                   </td>
+
+                  <td>{userInfo.newsletter ? 'true' : 'false'}</td>
+                  <td>{userInfo.user ? userInfo.user.login : ''}</td>
+                  <td>{userInfo.reward ? <Link to={`reward/${userInfo.reward.id}`}>{userInfo.reward.reward}</Link> : ''}</td>
                 </tr>
               ))}
             </tbody>

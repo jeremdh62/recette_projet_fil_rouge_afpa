@@ -72,14 +72,7 @@ export const UstensilUpdate = (props: IUstensilUpdateProps) => {
             <p>Loading...</p>
           ) : (
             <AvForm model={isNew ? {} : ustensilEntity} onSubmit={saveEntity}>
-              {!isNew ? (
-                <AvGroup>
-                  <Label for="ustensil-id">
-                    <Translate contentKey="global.field.id">ID</Translate>
-                  </Label>
-                  <AvInput id="ustensil-id" type="text" className="form-control" name="id" required readOnly />
-                </AvGroup>
-              ) : null}
+              
               <AvGroup>
                 <Label id="ustensilLabel" for="ustensil-ustensil">
                   <Translate contentKey="afparecetteApp.ustensil.ustensil">Ustensil</Translate>

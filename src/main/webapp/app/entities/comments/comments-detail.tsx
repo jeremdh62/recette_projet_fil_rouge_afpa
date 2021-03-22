@@ -34,11 +34,11 @@ export const CommentsDetail = (props: ICommentsDetailProps) => {
           <dt>
             <Translate contentKey="afparecetteApp.comments.userinfo">Userinfo</Translate>
           </dt>
-          <dd>{commentsEntity.userinfo ? commentsEntity.userinfo.id : ''}</dd>
+          <dd>{commentsEntity.userinfo ? commentsEntity.userinfo.user.login : ''}</dd>
           <dt>
             <Translate contentKey="afparecetteApp.comments.recipe">Recipe</Translate>
           </dt>
-          <dd>{commentsEntity.recipe ? commentsEntity.recipe.id : ''}</dd>
+          <dd>{commentsEntity.recipe ? commentsEntity.recipe.name : ''}</dd>
         </dl>
         <Button tag={Link} to="/comments" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

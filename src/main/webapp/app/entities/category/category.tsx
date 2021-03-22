@@ -30,27 +30,20 @@ export const Category = (props: ICategoryProps) => {
       </h2>
       <div className="table-responsive">
         {categoryList && categoryList.length > 0 ? (
-          <Table responsive>
+          <Table responsive striped bordered>
             <thead>
               <tr>
-                <th>
-                  <Translate contentKey="global.field.id">ID</Translate>
-                </th>
+              <th />
                 <th>
                   <Translate contentKey="afparecetteApp.category.category">Category</Translate>
                 </th>
-                <th />
+                
               </tr>
             </thead>
             <tbody>
               {categoryList.map((category, i) => (
                 <tr key={`entity-${i}`}>
-                  <td>
-                    <Button tag={Link} to={`${match.url}/${category.id}`} color="link" size="sm">
-                      {category.id}
-                    </Button>
-                  </td>
-                  <td>{category.category}</td>
+
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${category.id}`} color="info" size="sm">
@@ -73,6 +66,9 @@ export const Category = (props: ICategoryProps) => {
                       </Button>
                     </div>
                   </td>
+                  
+                  <td>{category.category}</td>
+                  
                 </tr>
               ))}
             </tbody>
