@@ -51,11 +51,6 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 		props.history.push('/recipe');
 	};
 	useEffect(() => {
-		if(isEntree){
-			setIsDessert(!isDessert)
-		}
-	}, [])
-	useEffect(() => {
 		if (isNew) {
 			props.reset();
 		} else {
