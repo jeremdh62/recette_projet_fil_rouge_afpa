@@ -29,17 +29,22 @@ import dessert from './images/dessert.jpg';
 export interface IRecipeUpdateProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> { }
 
 export const RecipeUpdate = (props: IRecipeUpdateProps) => {
-	const [idsingredient, setIdsingredient] = useState(false);
+	const [showIngredients, setShowIngredients] = useState(false);
+	const [isEntree, setIsEntree] = useState(false);
+	const [isPlat, setIsPlat] = useState(false);
+	const [isDessert, setIsDessert] = useState(false);
+	const [showUstensils, setShowUstensils] = useState(false);
+	const [showEvents, setShowEvents] = useState(false);
 	const [table, setTable] = useState([]);
-	const [idsustensil, setIdsustensil] = useState(false);
+	const [idsingredient, setIdsingredient] = useState([]);
+	const [idsustensil, setIdsustensil] = useState([]);
 	const [idscategory, setIdscategory] = useState([]);
 	const [idsunroll, setIdsunroll] = useState(false);
-	const [idsevent, setIdsevent] = useState(false);
+	const [idsevent, setIdsevent] = useState([]);
 	const [userinfoId, setUserinfoId] = useState('0');
 	const [isNew, setIsNew] = useState(!props.match.params || !props.match.params.id);
-	
 	const { recipeEntity, ingredients, ustensils, categories, events, userInfos, loading, updating } = props;
-
+	
 	const { picture, pictureContentType, unrollRecipe } = recipeEntity;
 
 	const handleClose = () => {
@@ -59,11 +64,10 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 		props.getEvents();
 		props.getUserInfos();
 	}, []);
-
+	
 	const onBlobChange = (isAnImage, name) => event => {
 		setFileData(event, (contentType, data) => props.setBlob(name, data, contentType), isAnImage);
 	};
-
 	const clearBlob = name => () => {
 		props.setBlob(name, undefined, undefined);
 	};
@@ -79,10 +83,10 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 			const entity = {
 				...recipeEntity,
 				...values,
-				ingredients: mapIdList(values.ingredients),
-				ustensils: mapIdList(values.ustensils),
-				categories: mapIdList(values.categories),
-				events: mapIdList(values.events),
+				ingredients: mapIdList(idsingredient),
+				ustensils: mapIdList(idsustensil),
+				categories: mapIdList(idscategory),
+				events: mapIdList(idsevent),
 			};
 
 			if (isNew) {
@@ -92,12 +96,18 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 			}
 		}
 	};
-	const remove = (rowId) => {
-    // Array.prototype.filter returns new array
-    // so we aren't mutating state here
-    const arrayCopy = table.filter((row) => row.id !== rowId);
-    setTable(arrayCopy);
-  };
+	const removeTableIngredient = (e) =>{
+    	const filteredArray = idsingredient.filter(item => item !== e)
+    	setIdsingredient(filteredArray);
+	};
+	const removeTableUstensil = (e) =>{
+    	const filteredArray = idsustensil.filter(item => item !== e)
+    	setIdsustensil(filteredArray);
+	};
+	const removeTableEvent = (e) =>{
+    	const filteredArray = idsevent.filter(item => item !== e)
+    	setIdsevent(filteredArray);
+	};
 	return (
 		<div>
 			<Row className="justify-content-center mt-5">
@@ -116,24 +126,24 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 									<div className="d-flex justify-content-start">
 									</div>
 									<div className="d-flex justify-content-between">
-									<div>
-										<span className="text-mandarin font-weight-bold">entrée</span>
-										<div className="entree">
-											<img className="img-entree" src={entree}/>
+										<div>
+											<span className="text-mandarin font-weight-bold">entrée</span>
+											<div className="entree" style={{ border: isEntree ? '3px solid #e55039' : ''}} onClick={() => setIsEntree(!isEntree)}>
+												<img onClick={() => setIdscategory([1])} className="img-entree" src={entree}/>
+											</div>
 										</div>
-									</div>
-									<div>
-										<span className="text-mandarin font-weight-bold">Plat</span>
-										<div className="plat">
-											<img className="img-plat" src={plat}/>
+										<div>
+											<span className="text-mandarin font-weight-bold">Plat</span>
+											<div className="plat" style={{ border: isPlat ? '3px solid #e55039' : ''}} onClick={() => setIsPlat(!isPlat)}>
+												<img onClick={() => setIdscategory([2])} className="img-plat" src={plat}/>
+											</div>
 										</div>
-									</div>
-									<div>
-										<span className="text-mandarin font-weight-bold">Dessert</span>
-										<div className="dessert">
-											<img className="img-dessert" src={dessert}/>
+										<div>
+											<span className="text-mandarin font-weight-bold">Dessert</span>
+											<div className="dessert" style={{ border: isDessert ? '3px solid #e55039' : ''}} onClick={() => setIsDessert(!isDessert)}>
+												<img onClick={() => setIdscategory([3])} className="img-dessert" src={dessert}/>
+											</div>
 										</div>
-									</div>
 									</div>
 								</AvGroup>
 								<AvGroup>
@@ -190,9 +200,9 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 										<Translate contentKey="afparecetteApp.recipe.ingredient">Ingredient</Translate>
 										
 									</Label>
-									<div className="font-weight-bold add-plus" onClick={() => setIdsingredient(!idsingredient)}>+</div>
+									<div className="font-weight-bold add-plus" onClick={() => setShowIngredients(!showIngredients)}>+</div>
 									{ 
-										idsingredient ? 
+										showIngredients ? 
 										<AvInput
 											id="recipe-ingredient"
 											type="select"
@@ -201,12 +211,12 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 											name="ingredients"
 											value={recipeEntity.ingredients && recipeEntity.ingredients.map(e => e.id)}
 										>
-											<option value="" key="0" />
+											<option value="" key="0"/>
 											{
 												ingredients ? 
 												ingredients.map(
 													otherEntity => (
-														<option key={otherEntity.id} onClick={() => setTable((oldArray) => [...oldArray, otherEntity])}>
+														<option key={otherEntity.id} onClick={() => setIdsingredient((oldArray) => [...oldArray, otherEntity.id])}>
 															{otherEntity.ingredient}
 														</option>
 												))
@@ -216,10 +226,28 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 										</AvInput> : null
 									}
 										<div className="mt-3 d-flex flex-column">
-										 {table ? table.map(
+										 {idsingredient ? idsingredient.map(
 												otherEntity => (
-													<div className="text-white p-3 bg-mandarin rounded mb-2 font-weight-bold d-flex justify-content-between" id={otherEntity.id} key={otherEntity.id}>
-														<span>{otherEntity.ingredient}</span> <span onClick={() => remove(otherEntity.id)}><i className="fas fa-times-circle"></i></span>
+													<div className="text-white p-3 bg-mandarin rounded mb-2 font-weight-bold d-flex justify-content-between" id={otherEntity} key={otherEntity}>
+													{idsingredient ?
+														<div>
+														{
+															ingredients ?
+															ingredients.map(
+																otherIngredient => (
+															<span key={otherIngredient.id}>
+																{otherEntity === otherIngredient.id && otherIngredient.ingredient}
+																{otherEntity === otherIngredient.id && <button onClick={() => removeTableIngredient(otherEntity)}>{otherEntity}<i className="fas fa-times-circle"></i></button>}
+															</span>
+															
+															))
+															:null
+														}
+													
+													</div>: null
+													}
+														
+													
 													</div>
 												)):null
 										  }
@@ -229,25 +257,54 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 									<Label for="recipe-ustensil" className="text-mandarin font-weight-bold">
 										<Translate contentKey="afparecetteApp.recipe.ustensil">Ustensil</Translate>
 									</Label>
-									<div className="font-weight-bold add-plus" onClick={() => setIdsustensil(!idsustensil)}>+</div>
-									{ idsustensil ? <AvInput
-									
-										id="recipe-ustensil"
-										type="select"
-										multiple
-										className="form-control"
-										name="ustensils"
-										value={recipeEntity.ustensils && recipeEntity.ustensils.map(e => e.id)}
-									>
-										<option value="" key="0" />
-										{ustensils
-											? ustensils.map(otherEntity => (
-												<option value={otherEntity.id} key={otherEntity.id}>
-													{otherEntity.ustensil}
-												</option>
-											))
-											: null}
-									</AvInput> : null}
+									<div className="font-weight-bold add-plus" onClick={() => setShowUstensils(!showUstensils)}>+</div>
+									{ 
+											showUstensils ? <AvInput
+										
+											id="recipe-ustensil"
+											type="select"
+											multiple
+											className="form-control"
+											name="ustensils"
+											value={recipeEntity.ustensils && recipeEntity.ustensils.map(e => e.id)}
+										>
+											<option value="" key="0" />
+											{ustensils
+												? ustensils.map(otherEntity => (
+													<option key={otherEntity.id} onClick={() => setIdsustensil((oldArray) => [...oldArray, otherEntity.id])}>
+														{otherEntity.ustensil}
+													</option>
+												))
+												: null}
+										</AvInput> : null
+									}
+									<div className="mt-3 d-flex flex-column">
+										 {idsustensil ? idsustensil.map(
+												otherEntity => (
+													<div className="text-white p-3 bg-mandarin rounded mb-2 font-weight-bold d-flex justify-content-between" id={otherEntity} key={otherEntity}>
+													{idsustensil ?
+														<div>
+														{
+															ustensils ?
+															ustensils.map(
+																otherUstensil => (
+															<span key={otherUstensil.id}>
+																{otherEntity === otherUstensil.id && otherUstensil.ustensil}
+																{otherEntity === otherUstensil.id && <button onClick={() => removeTableUstensil(otherEntity)}>{otherEntity}<i className="fas fa-times-circle"></i></button>}
+															</span>
+															
+															))
+															:null
+														}
+													
+													</div>: null
+													}
+														
+													
+													</div>
+												)):null
+										  }
+										</div>
 									
 								</AvGroup>
 								<AvGroup>
@@ -261,8 +318,8 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 									<Label for="recipe-event" className="text-mandarin font-weight-bold">
 										<Translate contentKey="afparecetteApp.recipe.event">Event</Translate>
 									</Label>
-									<div className="font-weight-bold add-plus" onClick={() => setIdsevent(!idsevent)}>+</div>
-									{idsevent ? <AvInput
+									<div className="font-weight-bold add-plus" onClick={() => setShowEvents(!showEvents)}>+</div>
+									{showEvents ? <AvInput
 										id="recipe-event"
 										type="select"
 										multiple
@@ -273,12 +330,43 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 										<option value="" key="0" />
 										{events
 											? events.map(otherEntity => (
-												<option value={otherEntity.id} key={otherEntity.id}>
+												<option key={otherEntity.id} onClick={() => setIdsevent((oldArray) => [...oldArray, otherEntity.id])}>
 													{otherEntity.event}
 												</option>
 											))
-											: null}
-									</AvInput> : null}
+											: null
+										}
+									</AvInput> : null
+									}
+									
+									<div className="mt-3 d-flex flex-column">
+										 {
+											idsevent ? idsevent.map(
+												otherEntity => (
+													<div className="text-white p-3 bg-mandarin rounded mb-2 font-weight-bold d-flex justify-content-between" id={otherEntity} key={otherEntity}>
+													{idsevent ?
+														<div>
+														{
+															events ?
+															events.map(
+																otherEvent => (
+															<span key={otherEvent.id}>
+																{otherEntity === otherEvent.id && otherEvent.event}
+																{otherEntity === otherEvent.id && <button onClick={() => removeTableEvent(otherEntity)}>{otherEntity}<i className="fas fa-times-circle"></i></button>}
+															</span>
+															
+															))
+															:null
+														}
+													
+													</div>: null
+													}
+														
+													
+													</div>
+												)):null
+										  }
+										</div>
 								</AvGroup>
 								<AvGroup>
 									<Label id="difficultyLabel" for="recipe-difficulty" className="text-mandarin font-weight-bold">
@@ -411,3 +499,4 @@ type StateProps = ReturnType<typeof mapStateToProps>;
 type DispatchProps = typeof mapDispatchToProps;
 
 export default connect(mapStateToProps, mapDispatchToProps)(RecipeUpdate);
+
