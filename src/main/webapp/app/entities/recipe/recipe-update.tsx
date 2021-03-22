@@ -35,7 +35,6 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 	const [isDessert, setIsDessert] = useState(false);
 	const [showUstensils, setShowUstensils] = useState(false);
 	const [showEvents, setShowEvents] = useState(false);
-	const [table, setTable] = useState([]);
 	const [idsingredient, setIdsingredient] = useState([]);
 	const [idsustensil, setIdsustensil] = useState([]);
 	const [idscategory, setIdscategory] = useState([]);
