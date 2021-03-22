@@ -50,7 +50,11 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 	const handleClose = () => {
 		props.history.push('/recipe');
 	};
-
+	useEffect(() => {
+		if(isEntree){
+			setIsDessert(!isDessert)
+		}
+	}, [])
 	useEffect(() => {
 		if (isNew) {
 			props.reset();
@@ -128,19 +132,19 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 									<div className="d-flex justify-content-between">
 										<div>
 											<span className="text-mandarin font-weight-bold">entrée</span>
-											<div className="entree" style={{ border: isEntree ? '3px solid #e55039' : ''}} onClick={() => setIsEntree(!isEntree)}>
+											<div className="entree" style={{ border: isEntree ? '3px solid #e55039' : ''}} onClick={() => {setIsEntree(!isEntree); setIsPlat(false); setIsDessert(false)}} >
 												<img onClick={() => setIdscategory([1])} className="img-entree" src={entree}/>
 											</div>
 										</div>
 										<div>
 											<span className="text-mandarin font-weight-bold">Plat</span>
-											<div className="plat" style={{ border: isPlat ? '3px solid #e55039' : ''}} onClick={() => setIsPlat(!isPlat)}>
+											<div className="plat" style={{ border: isPlat ? '3px solid #e55039' : ''}} onClick={() => {setIsPlat(!isPlat); setIsEntree(false);setIsDessert(false)}}>
 												<img onClick={() => setIdscategory([2])} className="img-plat" src={plat}/>
 											</div>
 										</div>
 										<div>
 											<span className="text-mandarin font-weight-bold">Dessert</span>
-											<div className="dessert" style={{ border: isDessert ? '3px solid #e55039' : ''}} onClick={() => setIsDessert(!isDessert)}>
+											<div className="dessert" style={{ border: isDessert ? '3px solid #e55039' : ''}} onClick={() => {setIsDessert(!isDessert); setIsEntree(false); setIsPlat(false)}}>
 												<img onClick={() => setIdscategory([3])} className="img-dessert" src={dessert}/>
 											</div>
 										</div>
