@@ -11,13 +11,11 @@
         "note": "Note",
         "userInfo": "Utilisateur",
         "comments": "Commentaires",
-        "role": "Role",
         "reward": "Récompense",
         "ingredient": "Ingrédient",
         "ustensil": "Ustensile",
         "category": "Catégorie",
         "event": "Evénement",
-        "userInfo": "User Info",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

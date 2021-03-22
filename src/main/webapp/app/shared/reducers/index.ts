@@ -29,9 +29,7 @@ import comments, {
   CommentsState
 } from 'app/entities/comments/comments.reducer';
 // prettier-ignore
-import role, {
-  RoleState
-} from 'app/entities/role/role.reducer';
+
 // prettier-ignore
 import reward, {
   RewardState
@@ -69,7 +67,6 @@ export interface IRootState {
   readonly note: NoteState;
   readonly userInfo: UserInfoState;
   readonly comments: CommentsState;
-  readonly role: RoleState;
   readonly reward: RewardState;
   readonly ingredient: IngredientState;
   readonly ustensil: UstensilState;
@@ -94,7 +91,6 @@ const rootReducer = combineReducers<IRootState>({
   note,
   userInfo,
   comments,
-  role,
   reward,
   ingredient,
   ustensil,
