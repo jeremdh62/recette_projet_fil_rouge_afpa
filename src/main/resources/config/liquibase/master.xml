@@ -18,7 +18,6 @@
     <include file="config/liquibase/changelog/20210210060007_added_entity_Note.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20210210060107_added_entity_UserInfo.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20210210060207_added_entity_Comments.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210210060307_added_entity_Role.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20210210060407_added_entity_Reward.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20210210060507_added_entity_Ingredient.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20210210060607_added_entity_Ustensil.xml" relativeToChangelogFile="false"/>

@@ -67,14 +67,7 @@ export const RewardUpdate = (props: IRewardUpdateProps) => {
             <p>Loading...</p>
           ) : (
             <AvForm model={isNew ? {} : rewardEntity} onSubmit={saveEntity}>
-              {!isNew ? (
-                <AvGroup>
-                  <Label for="reward-id">
-                    <Translate contentKey="global.field.id">ID</Translate>
-                  </Label>
-                  <AvInput id="reward-id" type="text" className="form-control" name="id" required readOnly />
-                </AvGroup>
-              ) : null}
+              
               <AvGroup>
                 <Label id="rewardLabel" for="reward-reward">
                   <Translate contentKey="afparecetteApp.reward.reward">Reward</Translate>

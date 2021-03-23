@@ -30,27 +30,20 @@ export const Event = (props: IEventProps) => {
       </h2>
       <div className="table-responsive">
         {eventList && eventList.length > 0 ? (
-          <Table responsive>
+          <Table responsive striped bordered>
             <thead>
               <tr>
-                <th>
-                  <Translate contentKey="global.field.id">ID</Translate>
-                </th>
+              <th />
                 <th>
                   <Translate contentKey="afparecetteApp.event.event">Event</Translate>
                 </th>
-                <th />
+                
               </tr>
             </thead>
             <tbody>
               {eventList.map((event, i) => (
                 <tr key={`entity-${i}`}>
-                  <td>
-                    <Button tag={Link} to={`${match.url}/${event.id}`} color="link" size="sm">
-                      {event.id}
-                    </Button>
-                  </td>
-                  <td>{event.event}</td>
+
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${event.id}`} color="info" size="sm">
@@ -73,6 +66,9 @@ export const Event = (props: IEventProps) => {
                       </Button>
                     </div>
                   </td>
+                  
+                  <td>{event.event}</td>
+
                 </tr>
               ))}
             </tbody>

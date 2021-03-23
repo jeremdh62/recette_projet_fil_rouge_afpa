@@ -76,14 +76,7 @@ export const UserInfoUpdate = (props: IUserInfoUpdateProps) => {
             <p>Loading...</p>
           ) : (
             <AvForm model={isNew ? {} : userInfoEntity} onSubmit={saveEntity}>
-              {!isNew ? (
-                <AvGroup>
-                  <Label for="user-info-id">
-                    <Translate contentKey="global.field.id">ID</Translate>
-                  </Label>
-                  <AvInput id="user-info-id" type="text" className="form-control" name="id" required readOnly />
-                </AvGroup>
-              ) : null}
+              
               <AvGroup check>
                 <Label id="newsletterLabel">
                   <AvInput id="user-info-newsletter" type="checkbox" className="form-check-input" name="newsletter" />
@@ -99,7 +92,7 @@ export const UserInfoUpdate = (props: IUserInfoUpdateProps) => {
                   {users
                     ? users.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
+                          {otherEntity.login}
                         </option>
                       ))
                     : null}
@@ -114,7 +107,7 @@ export const UserInfoUpdate = (props: IUserInfoUpdateProps) => {
                   {rewards
                     ? rewards.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
+                          {otherEntity.reward}
                         </option>
                       ))
                     : null}

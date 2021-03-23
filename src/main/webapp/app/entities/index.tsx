@@ -8,7 +8,7 @@ import Recipe from './recipe';
 import Note from './note';
 import UserInfo from './user-info';
 import Comments from './comments';
-import Role from './role';
+
 import Reward from './reward';
 import Ingredient from './ingredient';
 import Ustensil from './ustensil';
@@ -24,7 +24,6 @@ const Routes = ({ match }) => (
       <ErrorBoundaryRoute path={`${match.url}note`} component={Note} />
       <ErrorBoundaryRoute path={`${match.url}user-info`} component={UserInfo} />
       <ErrorBoundaryRoute path={`${match.url}comments`} component={Comments} />
-      <ErrorBoundaryRoute path={`${match.url}role`} component={Role} />
       <ErrorBoundaryRoute path={`${match.url}reward`} component={Reward} />
       <ErrorBoundaryRoute path={`${match.url}ingredient`} component={Ingredient} />
       <ErrorBoundaryRoute path={`${match.url}ustensil`} component={Ustensil} />

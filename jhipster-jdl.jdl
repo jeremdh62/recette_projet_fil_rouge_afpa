@@ -33,10 +33,6 @@ entity Comments {
 	comments TextBlob
 }
 
-entity Role {
-	role String
-}
-
 entity Reward {
 	reward String
 }
@@ -59,7 +55,7 @@ entity Event {
 
 // defining multiple oneToOne relationships
 relationship OneToOne {
-	UserInfo{user} to User,
+	UserInfo{user} to User
 }
 
 // defining multiple OneToMany relationships with comments
@@ -69,7 +65,6 @@ relationship OneToMany {
     UserInfo to Recipe{userinfo},
     UserInfo to Comments{userinfo}
     Recipe to Comments{recipe},
-    Role to UserInfo {role},
     Reward to UserInfo {reward}
 }
 

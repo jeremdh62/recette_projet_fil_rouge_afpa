@@ -34,11 +34,11 @@ export const UserInfoDetail = (props: IUserInfoDetailProps) => {
           <dt>
             <Translate contentKey="afparecetteApp.userInfo.user">User</Translate>
           </dt>
-          <dd>{userInfoEntity.user ? userInfoEntity.user.id : ''}</dd>
+          <dd>{userInfoEntity.user ? userInfoEntity.user.login : ''}</dd>
           <dt>
             <Translate contentKey="afparecetteApp.userInfo.reward">Reward</Translate>
           </dt>
-          <dd>{userInfoEntity.reward ? userInfoEntity.reward.id : ''}</dd>
+          <dd>{userInfoEntity.reward ? userInfoEntity.reward.reward : ''}</dd>
         </dl>
         <Button tag={Link} to="/user-info" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

@@ -14,12 +14,6 @@
                                  referencedColumnNames="id"
                                  referencedTableName="jhi_user"/>
 
-        <addForeignKeyConstraint baseColumnNames="role_id"
-                                 baseTableName="user_info"
-                                 constraintName="fk_user_info_role_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="role"/>
-
         <addForeignKeyConstraint baseColumnNames="reward_id"
                                  baseTableName="user_info"
                                  constraintName="fk_user_info_reward_id"
