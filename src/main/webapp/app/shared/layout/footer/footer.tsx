@@ -7,7 +7,7 @@ import { Col, Row } from 'reactstrap';
 const Footer = props => (
   <div className="footer page-content mt-5">
     {/* <Row> */}
-      <Col md="12 ">
+      <Col md="12 pied ">
         {/* <Translate contentKey="messageFooter"></Translate><br/>
           <Translate contentKey="footer"></Translate> */}
           <div className="row logo-reseaux">
@@ -68,7 +68,7 @@ const Footer = props => (
           <hr />
           <div className="row droits">
             <div className="col-lg-12">
-              <span className="droits">Tous droits résrvés Marmiton.org - 1999-2021</span>
+              <span className="droits">Tous droits résrvés AfpaRecette.org - 1999-2021</span>
             </div>
           </div>
 
