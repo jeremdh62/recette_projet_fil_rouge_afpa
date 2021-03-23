@@ -10,6 +10,11 @@ import PasswordResetFinish from 'app/modules/account/password-reset/finish/passw
 import Logout from 'app/modules/login/logout';
 import Home from 'app/modules/home/home';
 import Entities from 'app/entities';
+import {Plats} from 'app/modules/sousmenus/plats';
+import Desserts from 'app/modules/sousmenus/desserts';
+import MenuComplet from 'app/modules/sousmenus/menuComplet';
+import Saisons from 'app/modules/sousmenus/saisons';
+import Entrées from 'app/modules/sousmenus/entrées';
 import PrivateRoute from 'app/shared/auth/private-route';
 import ErrorBoundaryRoute from 'app/shared/error/error-boundary-route';
 import PageNotFound from 'app/shared/error/page-not-found';
@@ -22,7 +27,7 @@ const Account = Loadable({
 
 const Admin = Loadable({
   loader: () => import(/* webpackChunkName: "administration" */ 'app/modules/administration'),
-  loading: () => <div>loading ...</div>,
+  loading: () =><div>loading ...</div>,
 });
 
 const Routes = () => (
@@ -33,6 +38,12 @@ const Routes = () => (
       <ErrorBoundaryRoute path="/account/register" component={Register} />
       <ErrorBoundaryRoute path="/account/activate/:key?" component={Activate} />
       <ErrorBoundaryRoute path="/account/reset/request" component={PasswordResetInit} />
+      <ErrorBoundaryRoute path="/account/reset/request" component={PasswordResetInit} />
+      <ErrorBoundaryRoute  path="/plats" component={Plats} />
+      <ErrorBoundaryRoute  path="/desserts" component={Desserts} />
+      <ErrorBoundaryRoute  path="/menuComplet" component={MenuComplet} />
+      <ErrorBoundaryRoute  path="/saisons" component={Saisons} />
+      <ErrorBoundaryRoute  path="/entrées" component={Entrées} />
       <ErrorBoundaryRoute path="/account/reset/finish/:key?" component={PasswordResetFinish} />
       <PrivateRoute path="/admin" component={Admin} hasAnyAuthorities={[AUTHORITIES.ADMIN]} />
       <PrivateRoute path="/account" component={Account} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
