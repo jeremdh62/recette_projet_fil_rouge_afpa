@@ -25,9 +25,6 @@ const BarreMenu = () => {
                         <li className="nav-item mr-5">
                         <Link className="nav-link" to="/saisons">Saisons</Link>
                             </li>
-                        <li className="nav-item mr-5">
-                        <Link className="nav-link" to="/philippe">Philippe</Link>
-                            </li>
                        
                     </ul>
                 </div>

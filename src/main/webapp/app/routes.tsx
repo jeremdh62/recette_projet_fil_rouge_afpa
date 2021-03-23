@@ -10,16 +10,15 @@ import PasswordResetFinish from 'app/modules/account/password-reset/finish/passw
 import Logout from 'app/modules/login/logout';
 import Home from 'app/modules/home/home';
 import Entities from 'app/entities';
-import {Plats} from 'app/shared/layout/sousmenus/plats';
-import Desserts from 'app/shared/layout/sousmenus/desserts';
-import MenuComplet from 'app/shared/layout/sousmenus/menuComplet';
-import Saisons from 'app/shared/layout/sousmenus/saisons';
-import Entrées from 'app/shared/layout/sousmenus/entrées';
+import {Plats} from 'app/modules/sousmenus/plats';
+import Desserts from 'app/modules/sousmenus/desserts';
+import MenuComplet from 'app/modules/sousmenus/menuComplet';
+import Saisons from 'app/modules/sousmenus/saisons';
+import Entrées from 'app/modules/sousmenus/entrées';
 import PrivateRoute from 'app/shared/auth/private-route';
 import ErrorBoundaryRoute from 'app/shared/error/error-boundary-route';
 import PageNotFound from 'app/shared/error/page-not-found';
 import { AUTHORITIES } from 'app/config/constants';
-import entrées from './shared/layout/sousmenus/entrées';
 
 const Account = Loadable({
   loader: () => import(/* webpackChunkName: "account" */ 'app/modules/account'),
