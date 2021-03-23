@@ -15,7 +15,9 @@ import appConfig from 'app/config/constants';
 
 export const Brand = props => (
   <NavbarBrand tag={Link} to="/" className="brand-logo d-flex">
+
     <span className="brand-title mt-2">
+
       <Translate contentKey="global.title">Afparecette</Translate>
       <img className="chef" src="content/images/logochef2.png" alt="Logo" />
 
@@ -36,3 +38,13 @@ export const Home = props => (
     </NavLink>
   </NavItem>
 );
+export const UserRecipe = props => (
+  <NavItem>
+    <NavLink tag={Link} to="/recipe/new" className="d-flex align-items-center">
+      <i className="fas fa-utensils"></i>
+      <span>
+        <Translate contentKey="global.menu.userRecipe"></Translate>
+      </span>
+    </NavLink>
+  </NavItem>
+)

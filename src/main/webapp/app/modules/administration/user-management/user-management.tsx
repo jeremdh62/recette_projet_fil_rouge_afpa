@@ -69,8 +69,8 @@ export const UserManagement = (props: IUserManagementProps) => {
           <FontAwesomeIcon icon="plus" /> <Translate contentKey="userManagement.home.createLabel">Create a new user</Translate>
         </Link>
       </h2>
-      <Table responsive striped>
-        <thead>
+      <Table responsive striped bordered>
+        <thead className="text-center">
           <tr>
             <th className="hand" onClick={sort('id')}>
               <Translate contentKey="global.field.id">ID</Translate>
@@ -107,7 +107,7 @@ export const UserManagement = (props: IUserManagementProps) => {
             <th />
           </tr>
         </thead>
-        <tbody>
+        <tbody className="text-center">
           {users.map((user, i) => (
             <tr id={user.login} key={`user-${i}`}>
               <td>

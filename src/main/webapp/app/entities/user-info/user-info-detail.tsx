@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { Button, Row, Col } from 'reactstrap';
-import { Translate, ICrudGetAction, TextFormat } from 'react-jhipster';
+import { Translate, ICrudGetAction } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { IRootState } from 'app/shared/reducers';
@@ -32,39 +32,13 @@ export const UserInfoDetail = (props: IUserInfoDetailProps) => {
           </dt>
           <dd>{userInfoEntity.newsletter ? 'true' : 'false'}</dd>
           <dt>
-            <span id="createdAt">
-              <Translate contentKey="afparecetteApp.userInfo.createdAt">Created At</Translate>
-            </span>
-          </dt>
-          <dd>
-            {userInfoEntity.createdAt ? <TextFormat value={userInfoEntity.createdAt} type="date" format={APP_LOCAL_DATE_FORMAT} /> : null}
-          </dd>
-          <dt>
-            <span id="updatedAt">
-              <Translate contentKey="afparecetteApp.userInfo.updatedAt">Updated At</Translate>
-            </span>
-          </dt>
-          <dd>
-            {userInfoEntity.updatedAt ? <TextFormat value={userInfoEntity.updatedAt} type="date" format={APP_LOCAL_DATE_FORMAT} /> : null}
-          </dd>
-          <dt>
-            <span id="userName">
-              <Translate contentKey="afparecetteApp.userInfo.userName">User Name</Translate>
-            </span>
-          </dt>
-          <dd>{userInfoEntity.userName}</dd>
-          <dt>
             <Translate contentKey="afparecetteApp.userInfo.user">User</Translate>
           </dt>
-          <dd>{userInfoEntity.user ? userInfoEntity.user.id : ''}</dd>
-          <dt>
-            <Translate contentKey="afparecetteApp.userInfo.role">Role</Translate>
-          </dt>
-          <dd>{userInfoEntity.role ? userInfoEntity.role.id : ''}</dd>
+          <dd>{userInfoEntity.user ? userInfoEntity.user.login : ''}</dd>
           <dt>
             <Translate contentKey="afparecetteApp.userInfo.reward">Reward</Translate>
           </dt>
-          <dd>{userInfoEntity.reward ? userInfoEntity.reward.id : ''}</dd>
+          <dd>{userInfoEntity.reward ? userInfoEntity.reward.reward : ''}</dd>
         </dl>
         <Button tag={Link} to="/user-info" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

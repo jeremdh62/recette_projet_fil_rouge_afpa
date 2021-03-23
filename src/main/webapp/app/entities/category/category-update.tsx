@@ -72,14 +72,7 @@ export const CategoryUpdate = (props: ICategoryUpdateProps) => {
             <p>Loading...</p>
           ) : (
             <AvForm model={isNew ? {} : categoryEntity} onSubmit={saveEntity}>
-              {!isNew ? (
-                <AvGroup>
-                  <Label for="category-id">
-                    <Translate contentKey="global.field.id">ID</Translate>
-                  </Label>
-                  <AvInput id="category-id" type="text" className="form-control" name="id" required readOnly />
-                </AvGroup>
-              ) : null}
+              
               <AvGroup>
                 <Label id="categoryLabel" for="category-category">
                   <Translate contentKey="afparecetteApp.category.category">Category</Translate>

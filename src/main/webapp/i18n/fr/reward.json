@@ -2,22 +2,22 @@
   "afparecetteApp": {
     "reward": {
       "home": {
-        "title": "Rewards",
-        "createLabel": "Créer un nouveau Reward",
-        "createOrEditLabel": "Créer ou éditer un Reward",
-        "notFound": "Aucun Reward trouvé"
+        "title": "Récompenses",
+        "createLabel": "Créer une nouvelle Récompense",
+        "createOrEditLabel": "Créer ou éditer une Récompense",
+        "notFound": "Aucune Récompense trouvé"
       },
-      "created": "Un nouveau Reward a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Reward avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Reward avec l'identifiant {{ param }} a été supprimé",
+      "created": "Une nouvelle Récompense a été créé avec l'identifiant {{ param }}",
+      "updated": "La Récompense avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "La Récompense avec l'identifiant {{ param }} a été supprimé",
       "delete": {
-        "question": "Etes-vous certain de vouloir supprimer le Reward {{ id }} ?"
+        "question": "Etes-vous certain de vouloir supprimer la Récompense {{ id }} ?"
       },
       "detail": {
-        "title": "Reward"
+        "title": "Récompense"
       },
-      "reward": "Reward",
-      "userInfo": "User Info"
+      "reward": "Récompense",
+      "userInfo": "Utilisateur"
     }
   }
 }

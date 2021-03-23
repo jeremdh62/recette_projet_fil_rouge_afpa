@@ -6,7 +6,7 @@ import{Link} from 'react-router-dom'
 
 const BarreMenu = () => {
     return (
-        <Navbar className="menum navbar navbar-expand-md justify-content-center  ">
+        <Navbar className="menum navbar navbar-expand-md justify-content-center d-none d-md-block">
             <div className="container">
                 <div className="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
                     <ul className="topBotomBordersOut navbar-nav mx-auto text-center menu ">

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { Button, Col, Row, Table } from 'reactstrap';
-import { Translate, ICrudGetAllAction, TextFormat } from 'react-jhipster';
+import { Translate, ICrudGetAllAction } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { IRootState } from 'app/shared/reducers';
@@ -30,56 +30,27 @@ export const UserInfo = (props: IUserInfoProps) => {
       </h2>
       <div className="table-responsive">
         {userInfoList && userInfoList.length > 0 ? (
-          <Table responsive>
+          <Table responsive striped bordered>
             <thead>
               <tr>
-                <th>
-                  <Translate contentKey="global.field.id">ID</Translate>
-                </th>
+              <th />
                 <th>
                   <Translate contentKey="afparecetteApp.userInfo.newsletter">Newsletter</Translate>
-                </th>
-                <th>
-                  <Translate contentKey="afparecetteApp.userInfo.createdAt">Created At</Translate>
-                </th>
-                <th>
-                  <Translate contentKey="afparecetteApp.userInfo.updatedAt">Updated At</Translate>
-                </th>
-                <th>
-                  <Translate contentKey="afparecetteApp.userInfo.userName">User Name</Translate>
                 </th>
                 <th>
                   <Translate contentKey="afparecetteApp.userInfo.user">User</Translate>
                 </th>
                 <th>
-                  <Translate contentKey="afparecetteApp.userInfo.role">Role</Translate>
-                </th>
-                <th>
                   <Translate contentKey="afparecetteApp.userInfo.reward">Reward</Translate>
                 </th>
-                <th />
+                
               </tr>
             </thead>
             <tbody>
               {userInfoList.map((userInfo, i) => (
                 <tr key={`entity-${i}`}>
-                  <td>
-                    <Button tag={Link} to={`${match.url}/${userInfo.id}`} color="link" size="sm">
-                      {userInfo.id}
-                    </Button>
-                  </td>
-                  <td>{userInfo.newsletter ? 'true' : 'false'}</td>
-                  <td>
-                    {userInfo.createdAt ? <TextFormat type="date" value={userInfo.createdAt} format={APP_LOCAL_DATE_FORMAT} /> : null}
-                  </td>
-                  <td>
-                    {userInfo.updatedAt ? <TextFormat type="date" value={userInfo.updatedAt} format={APP_LOCAL_DATE_FORMAT} /> : null}
-                  </td>
-                  <td>{userInfo.userName}</td>
-                  <td>{userInfo.user ? userInfo.user.id : ''}</td>
-                  <td>{userInfo.role ? <Link to={`role/${userInfo.role.id}`}>{userInfo.role.id}</Link> : ''}</td>
-                  <td>{userInfo.reward ? <Link to={`reward/${userInfo.reward.id}`}>{userInfo.reward.id}</Link> : ''}</td>
-                  <td className="text-right">
+
+                  <td className="text-center">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${userInfo.id}`} color="info" size="sm">
                         <FontAwesomeIcon icon="eye" />{' '}
@@ -101,6 +72,10 @@ export const UserInfo = (props: IUserInfoProps) => {
                       </Button>
                     </div>
                   </td>
+
+                  <td>{userInfo.newsletter ? 'true' : 'false'}</td>
+                  <td>{userInfo.user ? userInfo.user.login : ''}</td>
+                  <td>{userInfo.reward ? <Link to={`reward/${userInfo.reward.id}`}>{userInfo.reward.reward}</Link> : ''}</td>
                 </tr>
               ))}
             </tbody>

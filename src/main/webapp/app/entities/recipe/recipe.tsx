@@ -1,3 +1,5 @@
+import './recipe.scss';
+
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link, RouteComponentProps } from 'react-router-dom';
@@ -10,7 +12,7 @@ import { getEntities } from './recipe.reducer';
 import { IRecipe } from 'app/shared/model/recipe.model';
 import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
 
-export interface IRecipeProps extends StateProps, DispatchProps, RouteComponentProps<{ url: string }> {}
+export interface IRecipeProps extends StateProps, DispatchProps, RouteComponentProps<{ url: string }> { }
 
 export const Recipe = (props: IRecipeProps) => {
   useEffect(() => {
@@ -30,11 +32,10 @@ export const Recipe = (props: IRecipeProps) => {
       </h2>
       <div className="table-responsive">
         {recipeList && recipeList.length > 0 ? (
-          <Table responsive>
-            <thead>
+          <Table responsive striped bordered>
+            <thead className="text-center">
               <tr>
                 <th>
-                  <Translate contentKey="global.field.id">ID</Translate>
                 </th>
                 <th>
                   <Translate contentKey="afparecetteApp.recipe.name">Name</Translate>
@@ -79,12 +80,6 @@ export const Recipe = (props: IRecipeProps) => {
                   <Translate contentKey="afparecetteApp.recipe.favorite">Favorite</Translate>
                 </th>
                 <th>
-                  <Translate contentKey="afparecetteApp.recipe.createdAt">Created At</Translate>
-                </th>
-                <th>
-                  <Translate contentKey="afparecetteApp.recipe.updatedAt">Updated At</Translate>
-                </th>
-                <th>
                   <Translate contentKey="afparecetteApp.recipe.ingredient">Ingredient</Translate>
                 </th>
                 <th>
@@ -99,102 +94,29 @@ export const Recipe = (props: IRecipeProps) => {
                 <th>
                   <Translate contentKey="afparecetteApp.recipe.userinfo">Userinfo</Translate>
                 </th>
-                <th />
               </tr>
             </thead>
-            <tbody>
+            <tbody className="text-center">
               {recipeList.map((recipe, i) => (
                 <tr key={`entity-${i}`}>
-                  <td>
-                    <Button tag={Link} to={`${match.url}/${recipe.id}`} color="link" size="sm">
-                      {recipe.id}
-                    </Button>
-                  </td>
-                  <td>{recipe.name}</td>
-                  <td>{recipe.description}</td>
-                  <td>
-                    {recipe.picture ? (
-                      <div>
-                        {recipe.pictureContentType ? (
-                          <a onClick={openFile(recipe.pictureContentType, recipe.picture)}>
-                            <img src={`data:${recipe.pictureContentType};base64,${recipe.picture}`} style={{ maxHeight: '30px' }} />
-                            &nbsp;
-                          </a>
-                        ) : null}
-                        <span>
-                          {recipe.pictureContentType}, {byteSize(recipe.picture)}
-                        </span>
-                      </div>
-                    ) : null}
-                  </td>
-                  <td>{recipe.video}</td>
-                  <td>{recipe.difficulty}</td>
-                  <td>{recipe.price}</td>
-                  <td>{recipe.unrollRecipe}</td>
-                  <td>{recipe.nbPerson}</td>
-                  <td>{recipe.time}</td>
-                  <td>{recipe.season}</td>
-                  <td>{recipe.origin}</td>
-                  <td>{recipe.online ? 'true' : 'false'}</td>
-                  <td>{recipe.cooking}</td>
-                  <td>{recipe.favorite ? 'true' : 'false'}</td>
-                  <td>{recipe.createdAt ? <TextFormat type="date" value={recipe.createdAt} format={APP_LOCAL_DATE_FORMAT} /> : null}</td>
-                  <td>{recipe.updatedAt ? <TextFormat type="date" value={recipe.updatedAt} format={APP_LOCAL_DATE_FORMAT} /> : null}</td>
-                  <td>
-                    {recipe.ingredients
-                      ? recipe.ingredients.map((val, j) => (
-                          <span key={j}>
-                            <Link to={`ingredient/${val.id}`}>{val.ingredient}</Link>
-                            {j === recipe.ingredients.length - 1 ? '' : ', '}
-                          </span>
-                        ))
-                      : null}
-                  </td>
-                  <td>
-                    {recipe.ustensils
-                      ? recipe.ustensils.map((val, j) => (
-                          <span key={j}>
-                            <Link to={`ustensil/${val.id}`}>{val.ustensil}</Link>
-                            {j === recipe.ustensils.length - 1 ? '' : ', '}
-                          </span>
-                        ))
-                      : null}
-                  </td>
-                  <td>
-                    {recipe.categories
-                      ? recipe.categories.map((val, j) => (
-                          <span key={j}>
-                            <Link to={`category/${val.id}`}>{val.category}</Link>
-                            {j === recipe.categories.length - 1 ? '' : ', '}
-                          </span>
-                        ))
-                      : null}
-                  </td>
-                  <td>
-                    {recipe.events
-                      ? recipe.events.map((val, j) => (
-                          <span key={j}>
-                            <Link to={`event/${val.id}`}>{val.event}</Link>
-                            {j === recipe.events.length - 1 ? '' : ', '}
-                          </span>
-                        ))
-                      : null}
-                  </td>
-                  <td>{recipe.userinfo ? <Link to={`user-info/${recipe.userinfo.id}`}>{recipe.userinfo.id}</Link> : ''}</td>
-                  <td className="text-right">
-                    <div className="btn-group flex-btn-group-container">
+
+                  <td className="text-center">
+                    <div  className="btn-group flex-btn-group-container">
+                     
                       <Button tag={Link} to={`${match.url}/${recipe.id}`} color="info" size="sm">
                         <FontAwesomeIcon icon="eye" />{' '}
                         <span className="d-none d-md-inline">
                           <Translate contentKey="entity.action.view">View</Translate>
                         </span>
                       </Button>
+                    
                       <Button tag={Link} to={`${match.url}/${recipe.id}/edit`} color="primary" size="sm">
                         <FontAwesomeIcon icon="pencil-alt" />{' '}
                         <span className="d-none d-md-inline">
                           <Translate contentKey="entity.action.edit">Edit</Translate>
                         </span>
                       </Button>
+                      
                       <Button tag={Link} to={`${match.url}/${recipe.id}/delete`} color="danger" size="sm">
                         <FontAwesomeIcon icon="trash" />{' '}
                         <span className="d-none d-md-inline">
@@ -203,6 +125,74 @@ export const Recipe = (props: IRecipeProps) => {
                       </Button>
                     </div>
                   </td>
+                  
+                  <td>{recipe.name}</td>
+                  <td className="overflowHiddenDeroule">{recipe.description}</td>
+                  <td>
+                    {recipe.picture ? (
+                      <div>
+                        {recipe.pictureContentType ? (
+                          <a onClick={openFile(recipe.pictureContentType, recipe.picture)}>
+                            <img src={`data:${recipe.pictureContentType};base64,${recipe.picture}`} style={{ maxHeight: '70px' }} />
+                            &nbsp;
+                          </a>
+                        ) : null}
+                      </div>
+                    ) : null}
+                  </td>
+                  <td className="overflowHiddenDeroule"><a href={recipe.video}>{recipe.video}</a></td>
+                  <td>{recipe.difficulty}</td>
+                  <td>{recipe.price}</td>
+                  <td className="overflowHiddenDeroule">{recipe.unrollRecipe}</td>
+                  <td>{recipe.nbPerson}</td>
+                  <td>{recipe.time}</td>
+                  <td>{recipe.season}</td>
+                  <td>{recipe.origin}</td>
+                  <td>{recipe.online ? 'true' : 'false'}</td>
+                  <td>{recipe.cooking}</td>
+                  <td>{recipe.favorite ? 'true' : 'false'}</td>
+                 
+                  <td className="overflowHiddenDeroule">
+                    {recipe.ingredients
+                      ? recipe.ingredients.map((val, j) => (
+                        <span key={j}>
+                          <Link to={`ingredient/${val.id}`}>{val.ingredient}</Link>
+                          {j === recipe.ingredients.length - 1 ? '' : ', '}
+                        </span>
+                      ))
+                      : null}
+                  </td>
+                  <td className="overflowHiddenDeroule">
+                    {recipe.ustensils
+                      ? recipe.ustensils.map((val, j) => (
+                        <span key={j}>
+                          <Link to={`ustensil/${val.id}`}>{val.ustensil}</Link>
+                          {j === recipe.ustensils.length - 1 ? '' : ', '}
+                        </span>
+                      ))
+                      : null}
+                  </td>
+                  <td>
+                    {recipe.categories
+                      ? recipe.categories.map((val, j) => (
+                        <span key={j}>
+                          <Link to={`category/${val.id}`}>{val.category}</Link>
+                          {j === recipe.categories.length - 1 ? '' : ', '}
+                        </span>
+                      ))
+                      : null}
+                  </td>
+                  <td>
+                    {recipe.events
+                      ? recipe.events.map((val, j) => (
+                        <span key={j}>
+                          <Link to={`event/${val.id}`}>{val.event}</Link>
+                          {j === recipe.events.length - 1 ? '' : ', '}
+                        </span>
+                      ))
+                      : null}
+                  </td>
+                  <td>{recipe.userinfo ? <Link to={`user-info/${recipe.userinfo.id}`}>{recipe.userinfo.user.login}</Link> : ''}</td>
                 </tr>
               ))}
             </tbody>

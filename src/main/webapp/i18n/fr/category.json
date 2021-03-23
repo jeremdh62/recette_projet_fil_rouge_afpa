@@ -2,22 +2,22 @@
   "afparecetteApp": {
     "category": {
       "home": {
-        "title": "Categories",
-        "createLabel": "Créer un nouveau Category",
-        "createOrEditLabel": "Créer ou éditer un Category",
-        "notFound": "Aucun Category trouvé"
+        "title": "Catégories",
+        "createLabel": "Créer une nouvelle Catégorie",
+        "createOrEditLabel": "Créer ou éditer une Catégorie",
+        "notFound": "Aucune Catégorie trouvé"
       },
-      "created": "Un nouveau Category a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Category avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Category avec l'identifiant {{ param }} a été supprimé",
+      "created": "Une nouvelle Catégorie a été créé avec l'identifiant {{ param }}",
+      "updated": "La Catégorie avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "La Catégorie avec l'identifiant {{ param }} a été supprimé",
       "delete": {
-        "question": "Etes-vous certain de vouloir supprimer le Category {{ id }} ?"
+        "question": "Etes-vous certain de vouloir supprimer la Catégorie {{ id }} ?"
       },
       "detail": {
-        "title": "Category"
+        "title": "Catégorie"
       },
-      "category": "Category",
-      "recipe": "Recipe"
+      "category": "Catégorie",
+      "recipe": "Recette"
     }
   }
 }

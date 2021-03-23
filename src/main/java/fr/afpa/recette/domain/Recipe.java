@@ -1,6 +1,8 @@
 package fr.afpa.recette.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import org.apache.commons.lang3.time.DurationFormatUtils;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.Type;
@@ -248,17 +250,22 @@ public class Recipe implements Serializable {
         this.nbPerson = nbPerson;
     }
 
-    public Duration getTime() {
-        return time;
+    public String getTime() {       
+        return DurationFormatUtils.formatDuration(time.toMillis(), "HH:mm", true);
+        
     }
-
+    
     public Recipe time(Duration time) {
         this.time = time;
         return this;
     }
 
-    public void setTime(Duration time) {
-        this.time = time;
+    public void setTime(String time) {
+        long hours = Integer.parseInt(time.split(":")[0]);
+        long minutes = Integer.parseInt(time.split(":")[1]);
+        Duration timeFinal;
+        timeFinal = Duration.ofMinutes(minutes);
+        this.time = timeFinal.plusHours(hours);
     }
 
     public String getSeason() {

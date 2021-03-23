@@ -8,6 +8,10 @@ Main page styles
   background: url('../../../content/images/jhipster_family_member_2.svg') no-repeat center top;
   background-size: contain;
 }
+
+.card {
+  border: none;
+}
 .cart {
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
   border-radius: 10px;

@@ -73,9 +73,6 @@ class UserInfoGatlingTest extends Simulation {
             .body(StringBody("""{
                 "id":null
                 , "newsletter":null
-                , "createdAt":"2020-01-01T00:00:00.000Z"
-                , "updatedAt":"2020-01-01T00:00:00.000Z"
-                , "userName":"SAMPLE_TEXT"
                 }""")).asJson
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_userInfo_url"))).exitHereIfFailed

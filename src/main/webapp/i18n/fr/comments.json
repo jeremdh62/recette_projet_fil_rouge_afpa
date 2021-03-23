@@ -2,23 +2,23 @@
   "afparecetteApp": {
     "comments": {
       "home": {
-        "title": "Comments",
-        "createLabel": "Créer un nouveau Comments",
-        "createOrEditLabel": "Créer ou éditer un Comments",
-        "notFound": "Aucun Comments trouvé"
+        "title": "Commentaire",
+        "createLabel": "Créer un nouveau Commentaire",
+        "createOrEditLabel": "Créer ou éditer un Commentaire",
+        "notFound": "Aucun Commentaire trouvé"
       },
-      "created": "Un nouveau Comments a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Comments avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Comments avec l'identifiant {{ param }} a été supprimé",
+      "created": "Un nouveau Commentaire a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Commentaire avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Commentaire avec l'identifiant {{ param }} a été supprimé",
       "delete": {
         "question": "Etes-vous certain de vouloir supprimer le Comments {{ id }} ?"
       },
       "detail": {
-        "title": "Comments"
+        "title": "Commentaire"
       },
-      "comments": "Comments",
-      "userinfo": "Userinfo",
-      "recipe": "Recipe"
+      "comments": "Commentaire",
+      "userinfo": "Utilisateur",
+      "recipe": "Recette"
     }
   }
 }

@@ -86,14 +86,7 @@ export const CommentsUpdate = (props: ICommentsUpdateProps) => {
             <p>Loading...</p>
           ) : (
             <AvForm model={isNew ? {} : commentsEntity} onSubmit={saveEntity}>
-              {!isNew ? (
-                <AvGroup>
-                  <Label for="comments-id">
-                    <Translate contentKey="global.field.id">ID</Translate>
-                  </Label>
-                  <AvInput id="comments-id" type="text" className="form-control" name="id" required readOnly />
-                </AvGroup>
-              ) : null}
+
               <AvGroup>
                 <Label id="commentsLabel" for="comments-comments">
                   <Translate contentKey="afparecetteApp.comments.comments">Comments</Translate>
@@ -109,7 +102,7 @@ export const CommentsUpdate = (props: ICommentsUpdateProps) => {
                   {userInfos
                     ? userInfos.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
+                          {otherEntity.user.login}
                         </option>
                       ))
                     : null}
@@ -124,7 +117,7 @@ export const CommentsUpdate = (props: ICommentsUpdateProps) => {
                   {recipes
                     ? recipes.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
+                          {otherEntity.name}
                         </option>
                       ))
                     : null}
