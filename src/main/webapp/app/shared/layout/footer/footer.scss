@@ -10,7 +10,9 @@
 }
 
 .droits {
-  margin-top: 55px;
+  margin-bottom: 40px;
+  font-family: Century Gothic;
+  font-size: 15px;
 }
 li {
   list-style: none;
@@ -21,14 +23,19 @@ li {
     font-size: 15px;
   }
 }
+@media screen and (max-width: 375px) {
+  .recettes h3 {
+    font-size: 25px;
+  }
+  .droits {
+    font-size: 17px;
+  }
+}
 @media screen and (max-width: 575px) {
   .ing {
     font-size: 5px;
   }
-  .ingredients {
-    font-size: 13px;
-    padding-bottom: 5px;
-  }
+
   ul {
     display: none;
   }
@@ -48,4 +55,47 @@ li {
 }
 .img:hover {
   transform: scale(1.07);
+}
+.info a {
+  color: #fff !important;
+}
+.liste li {
+  display: inline;
+  font-size: medium;
+  font-family: Century Gothic;
+  margin-right: 5px;
+}
+.partenaires {
+  font-size: 1, 5rem;
+  font-family: Century Gothic;
+}
+
+.recettes {
+  font-size: 1, 5rem;
+  font-family: Century Gothic;
+}
+.catégories {
+  font-size: 1, 5rem;
+  font-family: Century Gothic;
+}
+.recettelist li {
+  font-size: 17px;
+  margin: 5px;
+  font-family: Century Gothic;
+  margin-right: 40px;
+  cursor: pointer;
+}
+.partenaireslist li {
+  font-size: 17px;
+  font-family: Century Gothic;
+  margin: 5px;
+  margin-right: 40px;
+  cursor: pointer;
+}
+.categorieslist li {
+  font-size: 17px;
+  margin: 5px;
+  font-family: Century Gothic;
+  margin-right: 40px;
+  cursor: pointer;
 }
