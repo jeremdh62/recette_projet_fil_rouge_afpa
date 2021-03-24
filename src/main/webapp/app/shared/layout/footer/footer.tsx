@@ -4,7 +4,13 @@ import React from 'react';
 import { Translate } from 'react-jhipster';
 import { Col, Row } from 'reactstrap';
 
+
+
+
 const Footer = props => (
+
+
+
   <div className="footer page-content mt-5">
     {/* <Row> */}
       <Col md="12 ">
@@ -25,40 +31,41 @@ const Footer = props => (
             </div>
           </div>
           <hr />
-          <div className="row mt-3 d-flex justify-content-center ing">
-            <div className="col-12 col-sm-4 col-md-4 col-lg-3">
-              <h3 className="ingredients ">Ingrédients</h3>
-              <ul>
+          <div className="row mt-3 d-flex justify-content-center recettes ">
+          <div className="col-sm-4 col-md-4 col-lg-3 " >
+              <h3 className="recettes">RECETTES</h3>
+              <ul className="recettelist">
 
-                <li className="item-li">Viandes</li>
-                <li className="item-li">fromages</li>
-                <li className="item-li">fruits</li>
-                <li className="item-li">Champignons</li>
-                <li className="item-li">Légumes</li>
+                <li>tiramitsu</li>
+                <li>Tarte aux pommes</li>
+                <li>Mousse au chocolat</li>
+                <li>Blanquette de veau</li>
+                <li>Pain perdu</li>
               </ul>
 
             </div>
             <div className="col-sm-4 col-md-4 col-lg-3">
-              <h3 className="ingredients">Ingrédients</h3>
-              <ul>
+              <h3 className="catégories" >CATÉGORIES</h3>
+              <ul className="categorieslist">
 
-                <li>Viandes</li>
-                <li>fromages</li>
-                <li>fruits</li>
-                <li>Champignons</li>
-                <li>Légumes</li>
+                <li>Entrées</li>
+                <li>Déssert</li>
+                <li>Plats</li>
+                <li>Saisons</li>
+                <li>Menu complet</li>
+
               </ul>
 
             </div>
             <div className="col-sm-4 col-md-4 col-lg-3">
-              <h3 className="ingredients">Ingrédients</h3>
-              <ul>
+              <h3 className="partenaires">PARTENAIRES</h3>
+              <ul className="partenaireslist">
 
-                <li>Viandes</li>
-                <li>fromages</li>
-                <li>fruits</li>
-                <li>Champignons</li>
-                <li>Légumes</li>
+                <li>Déco.fr</li>
+                <li>M6</li>
+                <li>Afpa</li>
+                <li>Rtl.fr</li>
+                <li>Intersport</li>
               </ul>
 
             </div>
@@ -66,6 +73,20 @@ const Footer = props => (
           </div>
 
           <hr />
+          <div className="info">
+            
+           
+           <ul className="liste">
+           <li><a href="#">Mentions légales</a> -</li>
+             <li><a href="#">Conditions générales</a> -</li>
+             <li><a href="#">Vos questions</a> -</li>
+             <li><a href="#">Contact</a></li>
+           </ul>
+</div>
+            
+           
+         
+
           <div className="row droits">
             <div className="col-lg-12">
               <span className="droits">Tous droits résrvés Afpa Recette - 2021</span>
