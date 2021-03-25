@@ -1,5 +1,4 @@
 .footer {
-  height: 400px;
   width: 100%;
   background-color: #e55039;
   color: #fff;
@@ -9,7 +8,7 @@
   position: absolute;
 }
 
-.droits {
+span.droits {
   margin-bottom: 40px;
   font-family: Century Gothic;
   font-size: 15px;
@@ -25,12 +24,25 @@ li {
 }
 @media screen and (max-width: 375px) {
   .recettes h3 {
-    font-size: 25px;
+    font-size: 20px;
   }
-  .droits {
-    font-size: 17px;
+  .liste {
+    display: list-item;
+    text-align: center;
+    margin-right: 2.5em;
+    list-style-type: none;
+  }
+  .show {
+    display: block;
+  }
+  .footer {
+    height: auto;
   }
 }
+span.droits {
+  font-size: 17px;
+}
+
 @media screen and (max-width: 575px) {
   .ing {
     font-size: 5px;
@@ -47,6 +59,26 @@ li {
   }
   .fab {
     font-size: 40px;
+  }
+  h3.recettes {
+    font-size: 1, 5em;
+  }
+  h3.partenaires {
+    font-size: 1, 5em;
+  }
+  h3.catégories {
+    font-size: 1, 5em;
+  }
+  .liste {
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 769px) {
+  span.droits {
+    display: inline-block;
+  }
+  .footer {
+    max-height: 100%;
   }
 }
 .img {
