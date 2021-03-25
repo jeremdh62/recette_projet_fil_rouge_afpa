@@ -25,12 +25,24 @@ li {
 }
 @media screen and (max-width: 375px) {
   .recettes h3 {
-    font-size: 25px;
+    font-size: 20px;
   }
-  .droits {
-    font-size: 17px;
+  .liste {
+    display: list-item;
+    text-align: center;
+    margin-right: 2.5em;
+  }
+  .show {
+    display: block;
+  }
+  .footer {
+    height: auto;
   }
 }
+.droits {
+  font-size: 17px;
+}
+
 @media screen and (max-width: 575px) {
   .ing {
     font-size: 5px;
