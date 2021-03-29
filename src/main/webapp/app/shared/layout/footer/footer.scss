@@ -1,5 +1,4 @@
 .footer {
-  height: 400px;
   width: 100%;
   background-color: #e55039;
   color: #fff;
@@ -31,6 +30,7 @@ li {
     display: list-item;
     text-align: center;
     margin-right: 2.5em;
+    list-style-type: none;
   }
   .show {
     display: block;
@@ -59,6 +59,18 @@ li {
   }
   .fab {
     font-size: 40px;
+  }
+  h3.partenaires {
+    font-size: 1, 5em;
+  }
+  h3.recettes {
+    font-size: 1, 5em;
+  }
+  h3.categories {
+    font-size: 1, 5em;
+  }
+  .liste {
+    display: inline-block;
   }
 }
 .img {
