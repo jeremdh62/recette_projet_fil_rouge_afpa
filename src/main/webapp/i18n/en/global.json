@@ -17,6 +17,7 @@
         "ustensil": "Ustensil",
         "category": "Category",
         "event": "Event",
+        "quantity": "Quantity",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

@@ -1,0 +1,25 @@
+{
+  "afparecetteApp": {
+    "quantity": {
+      "home": {
+        "title": "Quantités",
+        "createLabel": "Créer une nouvelle Quantité",
+        "createOrEditLabel": "Créer ou éditer une Quantité",
+        "notFound": "Aucune Quantité trouvé"
+      },
+      "created": "Une nouvelle Quantité a été créé avec l'identifiant {{ param }}",
+      "updated": "La Quantité avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "La Quantité avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer la Quantité {{ id }} ?"
+      },
+      "detail": {
+        "title": "Quantité"
+      },
+      "qty": "quantité",
+      "unit": "unité",
+      "ingredient": "Ingrédient",
+      "recipe": "Recette"
+    }
+  }
+}
