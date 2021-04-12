@@ -50,6 +50,10 @@ import category, {
 import event, {
   EventState
 } from 'app/entities/event/event.reducer';
+// prettier-ignore
+import quantity, {
+  QuantityState
+} from 'app/entities/quantity/quantity.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
@@ -72,6 +76,7 @@ export interface IRootState {
   readonly ustensil: UstensilState;
   readonly category: CategoryState;
   readonly event: EventState;
+  readonly quantity: QuantityState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -96,6 +101,7 @@ const rootReducer = combineReducers<IRootState>({
   ustensil,
   category,
   event,
+  quantity,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar,
 });

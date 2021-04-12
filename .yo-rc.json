@@ -41,6 +41,7 @@
     "blueprints": [],
     "herokuAppName": "afparecette",
     "herokuDeployType": "jar",
-    "herokuJavaVersion": "1.8"
+    "herokuJavaVersion": "1.8",
+    "lastLiquibaseTimestamp": 1617709362000
   }
 }
