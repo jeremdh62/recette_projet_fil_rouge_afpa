@@ -87,7 +87,7 @@ export const UserInfoUpdate = (props: IUserInfoUpdateProps) => {
                 <Label for="user-info-user">
                   <Translate contentKey="afparecetteApp.userInfo.user">User</Translate>
                 </Label>
-                <AvInput id="user-info-user" type="select" className="form-control" name="user.id">
+                <AvInput required id="user-info-user" type="select" className="form-control" name="user.id">
                   <option value="" key="0" />
                   {users
                     ? users.map(otherEntity => (

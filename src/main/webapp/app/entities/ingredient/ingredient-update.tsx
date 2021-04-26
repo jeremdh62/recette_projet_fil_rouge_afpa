@@ -77,7 +77,7 @@ export const IngredientUpdate = (props: IIngredientUpdateProps) => {
                 <Label id="ingredientLabel" for="ingredient-ingredient">
                   <Translate contentKey="afparecetteApp.ingredient.ingredient">Ingredient</Translate>
                 </Label>
-                <AvField id="ingredient-ingredient" type="text" name="ingredient" />
+                <AvField required id="ingredient-ingredient" type="text" name="ingredient" />
               </AvGroup>
               <Button tag={Link} id="cancel-save" to="/ingredient" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />

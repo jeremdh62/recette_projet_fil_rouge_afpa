@@ -80,13 +80,13 @@ export const NoteUpdate = (props: INoteUpdateProps) => {
                 <Label id="noteLabel" for="note-note">
                   <Translate contentKey="afparecetteApp.note.note">Note</Translate>
                 </Label>
-                <AvField id="note-note" type="string" className="form-control" name="note" />
+                <AvField required id="note-note" type="string" className="form-control" name="note" />
               </AvGroup>
               <AvGroup>
                 <Label for="note-recipe">
                   <Translate contentKey="afparecetteApp.note.recipe">Recipe</Translate>
                 </Label>
-                <AvInput id="note-recipe" type="select" className="form-control" name="recipe.id">
+                <AvInput required id="note-recipe" type="select" className="form-control" name="recipe.id">
                   <option value="" key="0" />
                   {recipes
                     ? recipes.map(otherEntity => (
@@ -101,7 +101,7 @@ export const NoteUpdate = (props: INoteUpdateProps) => {
                 <Label for="note-userinfo">
                   <Translate contentKey="afparecetteApp.note.userinfo">Userinfo</Translate>
                 </Label>
-                <AvInput id="note-userinfo" type="select" className="form-control" name="userinfo.id">
+                <AvInput required id="note-userinfo" type="select" className="form-control" name="userinfo.id">
                   <option value="" key="0" />
                   {userInfos
                     ? userInfos.map(otherEntity => (

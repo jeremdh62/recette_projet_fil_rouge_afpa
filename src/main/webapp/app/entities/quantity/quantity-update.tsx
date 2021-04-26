@@ -116,7 +116,7 @@ export const QuantityUpdate = (props: IQuantityUpdateProps) => {
                 <Label for="quantity-ingredient">
                   <Translate contentKey="afparecetteApp.quantity.ingredient">Ingredient</Translate>
                 </Label>
-                <AvInput id="quantity-ingredient" type="select" className="form-control" name="ingredient.id">
+                <AvInput required id="quantity-ingredient" type="select" className="form-control" name="ingredient.id">
                   <option value="" key="0" />
                   {ingredients
                     ? ingredients.map(otherEntity => (
@@ -131,7 +131,7 @@ export const QuantityUpdate = (props: IQuantityUpdateProps) => {
                 <Label for="quantity-recipe">
                   <Translate contentKey="afparecetteApp.quantity.recipe">Recipe</Translate>
                 </Label>
-                <AvInput id="quantity-recipe" type="select" className="form-control" name="recipe.id">
+                <AvInput required id="quantity-recipe" type="select" className="form-control" name="recipe.id">
                   <option value="" key="0" />
                   {recipes
                     ? recipes.map(otherEntity => (

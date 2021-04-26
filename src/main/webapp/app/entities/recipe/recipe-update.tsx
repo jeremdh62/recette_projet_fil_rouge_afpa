@@ -116,7 +116,7 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 									<Label id="nameLabel" for="recipe-name" className="text-mandarin font-weight-bold">
 										<Translate contentKey="afparecetteApp.recipe.name">Recipe Title</Translate>
 									</Label>
-									<AvField id="recipe-name" type="text" name="name" />
+									<AvField required id="recipe-name" type="text" name="name" />
 								</AvGroup>
 								<AvGroup>
 									<Label for="recipe-category" className="text-mandarin font-weight-bold">
@@ -149,7 +149,7 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 									<Label id="descriptionLabel" for="recipe-description" className="text-mandarin font-weight-bold">
 										<Translate contentKey="afparecetteApp.recipe.description">Description</Translate>
 									</Label>
-									<AvField id="recipe-description" type="text" name="description" />
+									<AvField required id="recipe-description" type="text" name="description" />
 								</AvGroup>
 								<AvGroup>
 									<AvGroup>
@@ -203,6 +203,7 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 									{ 
 										showIngredients ? 
 										<AvInput
+											required
 											id="recipe-ingredient"
 											type="select"
 											multiple
@@ -259,6 +260,7 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 									<div className="font-weight-bold add-plus" onClick={() => setShowUstensils(!showUstensils)}>+</div>
 									{ 
 											showUstensils ? <AvInput
+											required
 											id="recipe-ustensil"
 											type="select"
 											multiple
@@ -310,7 +312,7 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 										<Translate contentKey="afparecetteApp.recipe.unrollRecipe">Unroll Recipe</Translate>
 									</Label>
 									<div className="font-weight-bold add-plus" onClick={() => setIdsunroll(!idsunroll)}>+</div>
-									{idsunroll ? <AvInput id="recipe-unrollRecipe" type="textarea" name="unrollRecipe" /> : null}
+									{idsunroll ? <AvInput required id="recipe-unrollRecipe" type="textarea" name="unrollRecipe" /> : null}
 								</AvGroup>
 								<AvGroup>
 									<Label for="recipe-event" className="text-mandarin font-weight-bold">
@@ -370,7 +372,7 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 									<Label id="difficultyLabel" for="recipe-difficulty" className="text-mandarin font-weight-bold">
 										<Translate contentKey="afparecetteApp.recipe.difficulty">Difficulty</Translate>
 									</Label>
-									<AvField id="recipe-difficulty" type="string" className="form-control" name="difficulty" />
+									<AvField required id="recipe-difficulty" type="string" className="form-control" name="difficulty" />
 								</AvGroup>
 								<AvGroup>
 									<Label id="priceLabel" for="recipe-price" className="text-mandarin font-weight-bold">
@@ -379,34 +381,28 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 									<AvField id="recipe-price" type="string" className="form-control" name="price" />
 								</AvGroup>
 								<AvGroup>
-									<Label id="unrollRecipeLabel" for="recipe-unrollRecipe" className="text-mandarin font-weight-bold">
-										<Translate contentKey="afparecetteApp.recipe.unrollRecipe">Unroll Recipe</Translate>
-									</Label>
-									<AvInput id="recipe-unrollRecipe" type="textarea" name="unrollRecipe" />
-								</AvGroup>
-								<AvGroup>
 									<Label id="nbPersonLabel" for="recipe-nbPerson" className="text-mandarin font-weight-bold">
 										<Translate contentKey="afparecetteApp.recipe.nbPerson">Nb Person</Translate>
 									</Label>
-									<AvField id="recipe-nbPerson" type="string" className="form-control" name="nbPerson" />
+									<AvField required id="recipe-nbPerson" type="string" className="form-control" name="nbPerson" />
 								</AvGroup>
 								<AvGroup>
 									<Label id="timeLabel" for="recipe-time" className="text-mandarin font-weight-bold">
 										<Translate contentKey="afparecetteApp.recipe.time">Time</Translate>
 									</Label>
-									<AvField id="recipe-time" type="time" name="time" />
+									<AvField required id="recipe-time" type="time" name="time" />
 								</AvGroup>
 								<AvGroup>
 									<Label id="seasonLabel" for="recipe-season" className="text-mandarin font-weight-bold">
 										<Translate contentKey="afparecetteApp.recipe.season">Season</Translate>
 									</Label>
-									<AvField id="recipe-season" type="text" name="season" />
+									<AvField required id="recipe-season" type="text" name="season" />
 								</AvGroup>
 								<AvGroup>
 									<Label id="originLabel" for="recipe-origin" className="text-mandarin font-weight-bold">
 										<Translate contentKey="afparecetteApp.recipe.origin">Origin</Translate>
 									</Label>
-									<AvField id="recipe-origin" type="text" name="origin" />
+									<AvField required id="recipe-origin" type="text" name="origin" />
 								</AvGroup>
 								<AvGroup check>
 									<Label id="onlineLabel" className="text-mandarin font-weight-bold">
@@ -418,7 +414,7 @@ export const RecipeUpdate = (props: IRecipeUpdateProps) => {
 									<Label id="cookingLabel" for="recipe-cooking" className="text-mandarin font-weight-bold">
 										<Translate contentKey="afparecetteApp.recipe.cooking">Cooking</Translate>
 									</Label>
-									<AvField id="recipe-cooking" type="text" name="cooking" />
+									<AvField required id="recipe-cooking" type="text" name="cooking" />
 								</AvGroup>
 								<AvGroup check>
 									<Label id="favoriteLabel" className="text-mandarin font-weight-bold">

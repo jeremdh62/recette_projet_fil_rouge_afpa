@@ -91,13 +91,13 @@ export const CommentsUpdate = (props: ICommentsUpdateProps) => {
                 <Label id="commentsLabel" for="comments-comments">
                   <Translate contentKey="afparecetteApp.comments.comments">Comments</Translate>
                 </Label>
-                <AvInput id="comments-comments" type="textarea" name="comments" />
+                <AvInput required id="comments-comments" type="textarea" name="comments" />
               </AvGroup>
               <AvGroup>
                 <Label for="comments-userinfo">
                   <Translate contentKey="afparecetteApp.comments.userinfo">Userinfo</Translate>
                 </Label>
-                <AvInput id="comments-userinfo" type="select" className="form-control" name="userinfo.id">
+                <AvInput required id="comments-userinfo" type="select" className="form-control" name="userinfo.id">
                   <option value="" key="0" />
                   {userInfos
                     ? userInfos.map(otherEntity => (
@@ -112,7 +112,7 @@ export const CommentsUpdate = (props: ICommentsUpdateProps) => {
                 <Label for="comments-recipe">
                   <Translate contentKey="afparecetteApp.comments.recipe">Recipe</Translate>
                 </Label>
-                <AvInput id="comments-recipe" type="select" className="form-control" name="recipe.id">
+                <AvInput required id="comments-recipe" type="select" className="form-control" name="recipe.id">
                   <option value="" key="0" />
                   {recipes
                     ? recipes.map(otherEntity => (

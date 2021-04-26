@@ -77,7 +77,7 @@ export const UstensilUpdate = (props: IUstensilUpdateProps) => {
                 <Label id="ustensilLabel" for="ustensil-ustensil">
                   <Translate contentKey="afparecetteApp.ustensil.ustensil">Ustensil</Translate>
                 </Label>
-                <AvField id="ustensil-ustensil" type="text" name="ustensil" />
+                <AvField required id="ustensil-ustensil" type="text" name="ustensil" />
               </AvGroup>
               <Button tag={Link} id="cancel-save" to="/ustensil" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />

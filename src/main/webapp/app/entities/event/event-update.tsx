@@ -84,7 +84,7 @@ export const EventUpdate = (props: IEventUpdateProps) => {
                 <Label id="eventLabel" for="event-event">
                   <Translate contentKey="afparecetteApp.event.event">Event</Translate>
                 </Label>
-                <AvField id="event-event" type="text" name="event" />
+                <AvField required id="event-event" type="text" name="event" />
               </AvGroup>
               <Button tag={Link} id="cancel-save" to="/event" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />

@@ -77,7 +77,7 @@ export const CategoryUpdate = (props: ICategoryUpdateProps) => {
                 <Label id="categoryLabel" for="category-category">
                   <Translate contentKey="afparecetteApp.category.category">Category</Translate>
                 </Label>
-                <AvField id="category-category" type="text" name="category" />
+                <AvField required id="category-category" type="text" name="category" />
               </AvGroup>
               <Button tag={Link} id="cancel-save" to="/category" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />

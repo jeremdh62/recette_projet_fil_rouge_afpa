@@ -72,7 +72,7 @@ export const RewardUpdate = (props: IRewardUpdateProps) => {
                 <Label id="rewardLabel" for="reward-reward">
                   <Translate contentKey="afparecetteApp.reward.reward">Reward</Translate>
                 </Label>
-                <AvField id="reward-reward" type="text" name="reward" />
+                <AvField required id="reward-reward" type="text" name="reward" />
               </AvGroup>
               <Button tag={Link} id="cancel-save" to="/reward" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
